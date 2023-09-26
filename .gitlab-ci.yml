@@ -6,7 +6,6 @@ build de la partie front:
   image: node:18
   stage: build
   script:
-    - cd client
     - npm install --production
     - npm run build
   artifacts:
