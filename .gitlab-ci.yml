@@ -1,0 +1,20 @@
+stages:
+  - build
+  - deploy
+
+build de la partie front:
+  image: node:18
+  stage: build
+  script:
+    - cd client
+    - npm install --production
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+deploiement de la partie client:
+  image: pockost/phploy:4.9.3
+  stage: deploy
+  script:
+    - phploy -s front-prod

@@ -1,1 +1,14 @@
-<p>nft works!</p>
+<div class="container d-flex justify-content-around me-2">
+  <div class="row">
+    <div *ngFor="let nft of nfts" class="col-3 border border-secondary border-3 m-1">
+      <a routerLink="/nft/details/{{ nft.id }}">
+        <img  src="{{ nft.media.src }}" alt="image de {{ nft.media.title }}" class="imgMedia m-auto d-block">
+      </a>
+      <h4 class="text-center">titre: {{ nft.media.title }}</h4>
+      <p class="text-center">Types : <span *ngFor="let nftSubCategory of nft.subCategories" class="types">Les catégories {{ nftSubCategory.subCategoryName }},</span></p> 
+      <p class="text-center">créé le : {{ nft.createdAt | date: "shortDate" }} by {{ nft.user.nickname }}</p>
+  
+    </div>
+
+  </div>
+</div>
