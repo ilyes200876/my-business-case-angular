@@ -1,4 +1,3 @@
-import { MediaInterface } from "./media-interface";
 import { SubCategoryInterface } from "./sub-category-interface";
 import { UserInterface } from "./user-interface";
 
@@ -7,6 +6,12 @@ export interface NftInterface {
   price: number,
   createdAt: Date,
   user: UserInterface,
-  media: MediaInterface,
+  title: string,
+  src: string,
+  weight: number,
+  format: string,
+  description: string,
+  nfts: NftInterface[],
   subCategories: SubCategoryInterface[]
+
 }
