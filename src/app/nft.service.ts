@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class NftService {
 
-  urlNftAll = "https://localhost:8000/api/nft";
+  urlNftAll = "http://api-ilyes69.atwebpages.com/api/nft";
 
   constructor(private http: HttpClient) { }
 
