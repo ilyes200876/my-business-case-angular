@@ -13,7 +13,9 @@ build de la partie front:
       - dist/
 
 deploiement de la partie client:
-  image: pockost/phploy:4.9.3
+  image:
+    name: pockost/phploy:4.9.3
+    entrypoint:  [""]
   stage: deploy
   script:
     - phploy -s front-prod
