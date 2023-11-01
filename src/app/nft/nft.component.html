@@ -5,10 +5,12 @@
         <img  src="{{ nft.src }}" alt="image de {{ nft.title }}" class="imgMedia m-auto d-block">
       </a>
       <h4 class="text-center">titre: {{ nft.title }}</h4>
-      <p class="text-center">Types : <span *ngFor="let nftSubCategory of nft.subCategories" class="types">Les catégories {{ nftSubCategory.subCategoryName }},</span></p> 
+      <p class="text-center">Types : <span *ngFor="let nftSubCategory of nft.subCategories" class="types">{{ nftSubCategory.subCategoryName }},</span></p> 
       <p class="text-center">créé le : {{ nft.createdAt | date: "shortDate" }} by {{ nft.user.nickname }}</p>
   
     </div>
 
   </div>
 </div>
+
+<img src="" alt ="toto">

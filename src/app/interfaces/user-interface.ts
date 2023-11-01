@@ -14,3 +14,9 @@ export interface UserInterface {
   nfts: NftInterface[],
   address: AddressInterface[]
 }
+
+export interface CredentialsInterface{
+  username: string,
+  password:string
+}
+

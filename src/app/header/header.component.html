@@ -9,6 +9,15 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/profile/">Profil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" *ngIf="!loggedIn()" aria-current="page" routerLink="/login">Se connecter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" *ngIf="loggedIn()" aria-current="page" routerLink="/" (click)="loggedout()">Se déconnecter</a>
+        </li>
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/article">Article</a>
         </li>

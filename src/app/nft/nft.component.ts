@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NftService } from '../nft.service';
-import { NftInterface } from '../nft-interface';
+import { NftInterface } from '../interfaces/nft-interface';
 import { ActivatedRoute } from '@angular/router';
+import { urlApi, urlUploadPicture } from '../environmental/environmental';
 
 
 @Component({
@@ -18,8 +19,10 @@ export class NftComponent implements OnInit{
 
   ngOnInit(){
     this.nftService.getAll().subscribe(data => {
+      for(let i = 0; i < data.length; i++){
+        data[i].src = urlUploadPicture + data[i].src;
+      }
       this.nfts = data;
-      console.log(this.nfts);
     });
     
   

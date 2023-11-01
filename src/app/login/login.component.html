@@ -1,0 +1,19 @@
+<div class="w-75">
+  
+  <form (ngSubmit)="handleSubmit()" [formGroup]="form">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="username" class="form-control" />
+    </div>
+
+    <div class="mt-2">
+      <label for="password">Mot de passe</label>
+      <input type="password" formControlName="password" id="password" class="form-control">
+    </div>
+
+    <button class="btn btn-primary mt-2">Submit</button>
+  </form>
+
+
+</div>
+

@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { NftInterface } from './nft-interface';
+import { NftInterface } from './interfaces/nft-interface';
 import { Observable } from 'rxjs';
+import { urlApi } from './environmental/environmental';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NftService {
 
-  urlNftAll = "http://api-ilyes69.atwebpages.com/api/nft";
+  urlNftAll = urlApi + "/nft";
 
   constructor(private http: HttpClient) { }
 

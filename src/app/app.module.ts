@@ -16,6 +16,10 @@ import { FooterComponent } from './footer/footer.component';
 import { Error404Component } from './error404/error404.component';
 import { HomeComponent } from './home/home.component';
 import { NftDetailsComponent } from './nft-details/nft-details.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TokenInterceptorProvider } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,13 +36,17 @@ import { NftDetailsComponent } from './nft-details/nft-details.component';
     Error404Component,
     HomeComponent,
     NftDetailsComponent,
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

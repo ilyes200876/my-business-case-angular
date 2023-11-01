@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NftInterface } from '../nft-interface';
+import { NftInterface } from '../interfaces/nft-interface';
 import { NftService } from '../nft.service';
 import { ActivatedRoute } from '@angular/router';
+import { urlUploadPicture } from '../environmental/environmental';
 
 @Component({
   selector: 'app-nft-details',
@@ -15,11 +16,18 @@ export class NftDetailsComponent implements OnInit{
   constructor(private nftService: NftService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
+    this.showNftById(1);
+  }
+  
+  showNftById(id: number){
     this.route.params.subscribe(params=>{
-      this.nftService.getNftById(params['id']).subscribe(data => this.nft=data)
+      this.nftService.getNftById(params['id']).subscribe(data =>{
+  
+        data.src = urlUploadPicture + data.src;
+        console.log(data);
+        this.nft=data
+      })
     });
   }
-
-  
 
 }
