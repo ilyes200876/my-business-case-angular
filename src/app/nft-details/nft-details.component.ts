@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NftInterface } from '../interfaces/nft-interface';
-import { NftService } from '../nft.service';
+import { NftService } from '../../services/nft/nft.service';
 import { ActivatedRoute } from '@angular/router';
 import { urlUploadPicture } from '../environmental/environmental';
 

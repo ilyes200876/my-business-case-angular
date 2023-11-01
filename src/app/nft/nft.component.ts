@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NftService } from '../nft.service';
+import { NftService } from '../../services/nft/nft.service';
 import { NftInterface } from '../interfaces/nft-interface';
 import { ActivatedRoute } from '@angular/router';
 import { urlApi, urlUploadPicture } from '../environmental/environmental';
+import { UserService } from 'src/services/user/user.service';
+import { UserInterface } from '../interfaces/user-interface';
 
 
 @Component({
@@ -12,10 +14,11 @@ import { urlApi, urlUploadPicture } from '../environmental/environmental';
 })
 export class NftComponent implements OnInit{
 
-  nfts: NftInterface[]|undefined;
+  nfts: NftInterface[] = [];
   nft: NftInterface|undefined;
+  users: UserInterface[] =[];
 
-  constructor(private nftService: NftService, private route: ActivatedRoute){}
+  constructor(private nftService: NftService, private route: ActivatedRoute, private userService: UserService){}
 
   ngOnInit(){
     this.nftService.getAll().subscribe(data => {
@@ -25,6 +28,11 @@ export class NftComponent implements OnInit{
       this.nfts = data;
     });
     
+    this.userService.getAllUsers().subscribe(dataUser => {
+      this.users = dataUser;
+      console.log(this.users);
+    });
+    console.log(this.users);
   
 
   }

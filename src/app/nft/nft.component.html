@@ -13,4 +13,9 @@
   </div>
 </div>
 
-<img src="" alt ="toto">
+<div *ngFor="let user of users">
+  <ul>
+    <li>{{ user.id }}</li>
+    <li>{{ user. nickname }}</li>
+  </ul>
+</div>

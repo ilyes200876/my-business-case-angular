@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/profile/">Profil</a>
+          <a class="nav-link active" aria-current="page" routerLink="/profile/{{ userData?.id }}">Profil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" *ngIf="!loggedIn()" aria-current="page" routerLink="/login">Se connecter</a>

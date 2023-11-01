@@ -19,15 +19,8 @@ export class AuthService {
 
   isLogged(): boolean{
     const token = localStorage.getItem('token')
-    console.log(token);
     return !!token
   }
-
-  // getIslogged(){
-  //   if(localStorage.getItem('token')){
-
-  //   }
-  // }
 
   clearToken(): void{
     localStorage.removeItem('token');
@@ -36,6 +29,22 @@ export class AuthService {
 
   getToken(): string | null{
     return localStorage.getItem('token');
+  }
+
+  getLoggedInUseremail(): any {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const tokenParts = token.split('.');
+      if (tokenParts.length === 3) {
+        const tokenPayload = JSON.parse(atob(tokenParts[1]));
+        console.log(tokenPayload);
+        let userEmail = tokenPayload.username;
+        console.log(userEmail);
+        
+        return userEmail;
+      }
+    }
+    return null;
   }
 
 }

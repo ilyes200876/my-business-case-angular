@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { UserService } from 'src/services/user/user.service';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit{
-  // isLogIn: boolean;
+  userData: any;
 
-  constructor(private auth: AuthService){}
+  constructor(private auth: AuthService, private userService: UserService){}
 
   ngOnInit(){
-    // this.loggedIn();
+    this.getUserData();
   }
 
   loggedIn(): boolean{
@@ -27,6 +28,18 @@ export class HeaderComponent implements OnInit{
   loggedout(){
     this.auth.clearToken();
     // this.isLogIn = false;
+  }
+
+  getUserData() {
+    this.userService.getUserData().subscribe(
+      (userData) => {
+        console.log('Données de l\'utilisateur connecté :', userData);
+        this.userData = userData;
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
+      }
+    );
   }
 
 }
