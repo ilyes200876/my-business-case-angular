@@ -1,0 +1,16 @@
+.navBar1{
+  height: 7rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  height: 100%;
+  color: white;
+  background: #00E1B9;
+  background: -moz-linear-gradient(45deg, #00E1B9 0%, #2388CB 30%, #080F4B 100%);
+  background: -webkit-linear-gradient(45deg, #00E1B9 0%, #2388CB 30%, #080F4B 100%);
+  background: linear-gradient(45deg, #00E1B9 0%, #2388CB 30%, #080F4B 100%);
+  li{
+    color: white;
+  }
+  z-index: 1;
+}

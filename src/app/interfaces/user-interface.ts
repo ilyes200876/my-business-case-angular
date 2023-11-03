@@ -10,6 +10,7 @@ export interface UserInterface {
   lastName: string,
   nickname: string,
   birthDate: Date,
+  roles: string[],
   isOwner: boolean,
   nfts: NftInterface[],
   address: AddressInterface[]

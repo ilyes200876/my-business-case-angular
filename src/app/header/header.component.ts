@@ -17,17 +17,12 @@ export class HeaderComponent implements OnInit{
   }
 
   loggedIn(): boolean{
-    // if(this.auth.isLogged() === true){
-    //   return this.isLogIn = true;
-    // }else{
-    //   return this.isLogIn = false;
-    // }
+    
     return this.auth.isLogged()
   }
 
   loggedout(){
     this.auth.clearToken();
-    // this.isLogIn = false;
   }
 
   getUserData() {
@@ -37,9 +32,20 @@ export class HeaderComponent implements OnInit{
         this.userData = userData;
       },
       (error) => {
-        console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
+        console.error('Erreur :', error);
       }
     );
   }
+
+  isAdmin(): boolean {
+    let roles = this.auth.getUserRole();
+    
+    for(let i = 0; i<roles.length; i++){
+      if(roles[i] === "ROLE_ADMIN"){
+        return true;
+      }
+    }
+    return false;
+}
 
 }

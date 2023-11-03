@@ -33,9 +33,9 @@ export class AuthService {
 
   getLoggedInUseremail(): any {
     const token = localStorage.getItem('token');
-    if (token) {
+    if(token){
       const tokenParts = token.split('.');
-      if (tokenParts.length === 3) {
+      if(tokenParts.length === 3){
         const tokenPayload = JSON.parse(atob(tokenParts[1]));
         console.log(tokenPayload);
         let userEmail = tokenPayload.username;
@@ -45,6 +45,19 @@ export class AuthService {
       }
     }
     return null;
+  }
+
+  getUserRole(){
+    const token = localStorage.getItem('token');
+    if(token){
+      const tokenParts = token.split('.');
+      if(tokenParts.length === 3){
+        const tokenPayload = JSON.parse(atob(tokenParts[1]));
+        let userRole = tokenPayload.roles;
+        return userRole;
+      }
+      return null;
+    }
   }
 
 }

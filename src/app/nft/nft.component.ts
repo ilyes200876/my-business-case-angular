@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { urlApi, urlUploadPicture } from '../environmental/environmental';
 import { UserService } from 'src/services/user/user.service';
 import { UserInterface } from '../interfaces/user-interface';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class NftComponent implements OnInit{
 
   nfts: NftInterface[] = [];
   nft: NftInterface|undefined;
+  searchedNfts: NftInterface[];
+  searchTerm: string = "";
   users: UserInterface[] =[];
 
   constructor(private nftService: NftService, private route: ActivatedRoute, private userService: UserService){}
@@ -26,6 +29,7 @@ export class NftComponent implements OnInit{
         data[i].src = urlUploadPicture + data[i].src;
       }
       this.nfts = data;
+      this.onSubmit();
     });
     
     this.userService.getAllUsers().subscribe(dataUser => {
@@ -37,6 +41,16 @@ export class NftComponent implements OnInit{
 
   }
 
+  public form: FormGroup = new FormGroup({
+    title: new FormControl('')
+  })
+
+  onSubmit() {
+    this.searchedNfts = this.nfts.filter((item) =>
+      item.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+    console.log(this.searchedNfts);
+  }
 
   
 }
