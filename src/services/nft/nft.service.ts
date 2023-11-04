@@ -20,4 +20,14 @@ export class NftService {
   getNftById(id: number){
     return this.http.get<NftInterface>(this.urlNftAll + "/show/" + id);
   }
+
+  getNftsByTitle(inputValue :string){
+
+    return this.http.get<NftInterface[]>(`${this.urlNftAll}?t=${inputValue}`);
+  }
+
+  getNftBySubCategory(inputValue: string){
+    return this.http.get<NftInterface[]>(`${this.urlNftAll}?sn=${inputValue}`);
+  }
+
 }

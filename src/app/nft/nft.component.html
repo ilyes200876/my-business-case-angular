@@ -1,12 +1,19 @@
 <nav class="navbar bg-light navBar2">
   <div class="container-fluid d-flex justify-content-center">
-    <form class="d-flex" role="search" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-      <input type="text" placeholder="Search"  formControlName="title">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+    <form class="d-flex" role="search" [formGroup]="form">
+      <input type="text" placeholder="Search"  formControlName="title" (ngModelChange)="search($event)">
     </form>
   </div>
 </nav>
+
+<div class="container-fluid d-flex justify-content-center">
+  <form [formGroup]="formSubCategory">
+    <select>
+      <option selected>All</option>
+      <option *ngFor="let subCategory of subCategories" formControlName="subCategory" value="{{ subCategory.subCategoryName }}" (ngModelChange)="filterSubCategory($event)">{{ subCategory.subCategoryName }}</option>
+    </select>
+  </form>
+</div>
 <div class="container d-flex justify-content-around me-2">
   <div class="row">
     <div *ngFor="let nft of nfts" class="col-3 border border-secondary border-3 m-1">
