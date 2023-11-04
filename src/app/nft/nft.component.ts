@@ -29,7 +29,7 @@ export class NftComponent implements OnInit{
         data[i].src = urlUploadPicture + data[i].src;
       }
       this.nfts = data;
-      this.onSubmit();
+      this.searchedNfts;
     });
     
     this.userService.getAllUsers().subscribe(dataUser => {
@@ -46,8 +46,11 @@ export class NftComponent implements OnInit{
   })
 
   onSubmit() {
-    this.searchedNfts = this.nfts.filter((item) =>
-      item.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+    if(this.searchTerm === ""){
+      this.searchedNfts = this.nfts;
+    }
+    this.searchedNfts = this.nfts.filter((nft) =>
+      nft.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
     console.log(this.searchedNfts);
   }
