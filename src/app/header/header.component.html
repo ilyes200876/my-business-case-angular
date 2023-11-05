@@ -70,13 +70,25 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div  *ngIf="userData?.gender === 'female'">
+      <p>Bienvenue Madame {{ userData?.firstName }}</p>
+    </div>
+    <div *ngIf="userData?.gender=== 'male'">
+      <p>Bienvenue Monsieur {{ userData?.firstName }}</p>
+    </div>
+    <div *ngIf="userData?.gender=== 'other'">
+      <p>Bienvenue {{ userData?.firstName }}</p>
+    </div>
+    <div class="emptyDiv">
+
+    </div>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/profile/{{ userData?.id }}">Profil</a>
+          <a class="nav-link active" aria-current="page" routerLink="/profile">Profil</a>
         </li>
         <li class="nav-item" *ngIf="!loggedIn()">
           <a class="nav-link active" aria-current="page" routerLink="/login">Se connecter</a>

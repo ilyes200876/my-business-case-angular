@@ -1,7 +1,33 @@
 .navBar2{
+  height: 6rem;
   form{
 
     text-align: center;
+    input{
+      border-radius: 10px;
+      width: 19rem;
+      height: 2rem;
+      border: none;
+      background-color: #D9D9D9;
+      position: relative;
+    }
+    i{
+      left: 57rem;
+      bottom: 2.4rem;
+      position: absolute;
+      color: rgb(158, 158, 158);
+    }
+  }
+}
+
+.filterContainer{
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+  width: 50%;
+  .filter{
+    background-color: #87CA92;
+    width: 10rem;
+    border-radius: 5px;
   }
 }
 

@@ -14,7 +14,7 @@ export class AuthService {
   saveToken(token: string): void{
     localStorage.setItem('token', token);
     // !! token;
-    this.route.navigate(['/profile']);
+    this.route.navigate(['/']);
   }
 
   isLogged(): boolean{

@@ -1,14 +1,15 @@
 <nav class="navbar bg-light navBar2">
   <div class="container-fluid d-flex justify-content-center">
     <form class="d-flex" role="search" [formGroup]="form">
-      <input type="text" placeholder="Search"  formControlName="title" (ngModelChange)="search($event)">
+      <input type="text" placeholder="   Search NFT by title"  formControlName="title" (ngModelChange)="search($event)">
+      <i class="fas fa-search"></i>
     </form>
   </div>
 </nav>
 
-<div class="container-fluid d-flex justify-content-center">
+<div class="container-fluid d-flex justify-content-end filterContainer">
   <form [formGroup]="formSubCategory">
-    <select>
+    <select class="filter">
       <option selected>All</option>
       <option *ngFor="let subCategory of subCategories" formControlName="subCategory" value="{{ subCategory.subCategoryName }}" (ngModelChange)="filterSubCategory($event)">{{ subCategory.subCategoryName }}</option>
     </select>

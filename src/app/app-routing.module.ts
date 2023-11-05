@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'nft/details/:id', component: NftDetailsComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'profile/:id', component: ProfileComponent, canActivate:[authGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate:[authGuard]},
   {path: 'admin', component: AdminComponent},
   {path: '**', component: Error404Component}
 ];
