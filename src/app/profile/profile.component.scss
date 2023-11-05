@@ -1,0 +1,15 @@
+.profileData{
+  display: flex;
+  .profilePic{
+    width: 15rem;
+    height: 15rem;
+    border: solid;
+    border-radius: 150px 150px 150px 150px;
+    margin-left: 2rem;
+  }
+
+  .usernameData{
+    margin-left: 10rem;
+    margin-top: 1rem;
+  }
+}
