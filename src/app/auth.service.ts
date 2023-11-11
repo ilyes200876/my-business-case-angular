@@ -7,19 +7,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
 
-  // private loggedIn = new BehaviorSubject<boolean>(false);
-
   constructor(private route: Router) { }
 
   saveToken(token: string): void{
     localStorage.setItem('token', token);
-    // !! token;
     this.route.navigate(['/']);
   }
 
   isLogged(): boolean{
-    const token = localStorage.getItem('token')
-    return !!token
+    const token = localStorage.getItem('token');
+    return !!token;
   }
 
   clearToken(): void{

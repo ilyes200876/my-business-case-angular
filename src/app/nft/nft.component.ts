@@ -91,8 +91,11 @@ export class NftComponent implements OnInit{
     subCategory: new FormControl('')
   })
 
-  filterSubCategory(inputValue: string){
-    if(inputValue === "All"){
+  onSubCategoryNameChanges(inputValue: any){
+
+    const value = inputValue.target.value;
+
+    if(value === "All"){
       this.nftService.getAll().subscribe(
         (data)=>{
           for(let i = 0; i < data.length; i++){
@@ -102,7 +105,7 @@ export class NftComponent implements OnInit{
         }
       )
     }else{
-      this.nftService.getNftBySubCategory(inputValue).subscribe(
+      this.nftService.getNftBySubCategory(value).subscribe(
         (data)=>{
           for(let i = 0; i < data.length; i++){
             data[i].src = urlUploadPicture + data[i].src;

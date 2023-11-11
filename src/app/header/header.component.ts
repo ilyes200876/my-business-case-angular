@@ -39,13 +39,16 @@ export class HeaderComponent implements OnInit{
 
   isAdmin(): boolean {
     let roles = this.auth.getUserRole();
-    
-    for(let i = 0; i<roles.length; i++){
-      if(roles[i] === "ROLE_ADMIN"){
-        return true;
+    if(roles){
+
+      for(let i = 0; i<roles.length; i++){
+        if(roles[i] === "ROLE_ADMIN"){
+          return true;
+        }
       }
+      return false;
     }
     return false;
-}
+  }
 
 }

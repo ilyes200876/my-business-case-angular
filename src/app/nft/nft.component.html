@@ -8,12 +8,17 @@
 </nav>
 
 <div class="container-fluid d-flex justify-content-end filterContainer">
-  <form [formGroup]="formSubCategory">
-    <select class="filter">
+
+    <select class="filter" (change)="onSubCategoryNameChanges($event)">
       <option selected>All</option>
-      <option *ngFor="let subCategory of subCategories" formControlName="subCategory" value="{{ subCategory.subCategoryName }}" (ngModelChange)="filterSubCategory($event)">{{ subCategory.subCategoryName }}</option>
+      <ng-container *ngFor="let subCategory of subCategories">
+        <option [value]="subCategory.subCategoryName">
+          {{subCategory.subCategoryName}}
+        </option>
+      </ng-container>
     </select>
-  </form>
+
+
 </div>
 <div class="container d-flex justify-content-around me-2">
   <div class="row">
