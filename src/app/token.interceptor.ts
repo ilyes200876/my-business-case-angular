@@ -8,11 +8,12 @@ import {
 } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private route: Router) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     
@@ -21,13 +22,13 @@ export class TokenInterceptor implements HttpInterceptor {
       let clone = request.clone({
         headers : request.headers.set('Authorization', 'bearer ' + token)
       })
-      console.log(clone);
       
       return next.handle(clone).pipe(
         catchError(error => {
           console.log(error)
           if(error.status === 401){
             this.auth.clearToken()
+            this.route.navigate(['/login']);
           }
           return throwError('Session Expired')
         })

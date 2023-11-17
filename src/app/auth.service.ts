@@ -21,7 +21,7 @@ export class AuthService {
 
   clearToken(): void{
     localStorage.removeItem('token');
-    this.route.navigate(['/']);
+    this.route.navigate(['/login']);
   }
 
   getToken(): string | null{
