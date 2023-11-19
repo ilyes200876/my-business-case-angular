@@ -45,14 +45,14 @@ export class RegisterComponent {
         password: this.form.value.email,
         birthDate: this.form.value.birthDate,
         profilePic: this.form.value.profilePic,
-        address: [
+        address: 
           {
             street: this.form.value.street,
             zipCode: this.form.value.zipCode,
             department: this.form.value.department,
             country: this.form.value.country
           }
-        ]
+        
       };
 
     this.userService.createUser(user).subscribe(response => {

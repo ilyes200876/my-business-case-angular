@@ -14,7 +14,7 @@ export interface UserInterface {
   isOwner?: boolean,
   profilePic?: string,
   nfts?: NftInterface[],
-  address?: AddressInterface[]
+  address?: AddressInterface
 }
 
 export interface CredentialsInterface{

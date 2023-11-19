@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/services/user/user.service';
 import { UserInterface } from '../interfaces/user-interface';
 
@@ -7,7 +7,7 @@ import { UserInterface } from '../interfaces/user-interface';
   templateUrl: './admin-user.component.html',
   styleUrls: ['./admin-user.component.scss']
 })
-export class AdminUserComponent {
+export class AdminUserComponent implements OnInit{
 
   users: UserInterface[] = [];
 

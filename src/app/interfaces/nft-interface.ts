@@ -11,7 +11,6 @@ export interface NftInterface {
   weight: number,
   format: string,
   description: string,
-  nfts: NftInterface[],
   subCategories: SubCategoryInterface[]
 
 }

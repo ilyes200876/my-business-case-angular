@@ -2,7 +2,7 @@ import { UserInterface } from "./user-interface";
 
 export interface AddressInterface {
   id?:number,
-  street:string,
+  street?:string,
   department?: string,
   zipCode?:string,
   country?: string,

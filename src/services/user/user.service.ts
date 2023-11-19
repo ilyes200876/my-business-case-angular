@@ -44,4 +44,14 @@ export class UserService {
     );
   }
 
+  updateUser(id: number, data: any){
+    const body = JSON.stringify(data);
+    const header = { 'content-type': 'application/x-www-form-urlencoded'};
+    return this.http.put<any>(urlApi + "/update/" + id, body,  {'headers': header});
+  }
+
+  deleteUser(id: number): Observable<any>{
+    return this.http.delete<any>(urlApi + '/delete/' + id);
+  }
+
 }

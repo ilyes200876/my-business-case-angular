@@ -1,2 +1,31 @@
 <app-admin-header></app-admin-header>
-<p>admin-nft works!</p>
+
+<div class="container">
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Déscription</th>
+        <th scope="col">Créer le</th>
+        <th scope="col">prix</th>
+        <th scope="col"></th>
+        <th scope="col">mettre à jour</th>
+        <th scope="col">supprimer</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let nft of nfts">
+      <tr>
+        <th scope="row">{{ nft.id }}</th>
+        <td>{{ nft.title }}</td>
+        <td>{{ nft.description }}</td>
+        <td>{{ nft.createdAt }}</td>
+        <td>{{ nft.price }}</td>
+        <td><span *ngFor="let subCategory of nft.subCategories"> {{ subCategory.subCategoryName }} , </span></td>
+        <td>Voir</td>
+        <td>update</td>
+        <td>delete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

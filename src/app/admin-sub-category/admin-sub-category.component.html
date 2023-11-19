@@ -1,2 +1,27 @@
 <app-admin-header></app-admin-header>
 <p>admin-sub-category works!</p>
+
+<div class="container">
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nom de la sous-catégorie</th>
+        <th scope="col">La catégorie</th>
+        <th scope="col"></th>
+        <th scope="col">mettre à jour</th>
+        <th scope="col">supprimer</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let subCategory of subCatergories">
+      <tr>
+        <th scope="row">{{ subCategory.id }}</th>
+        <td>{{ subCategory.subCategoryName }}</td>
+        <td>{{ subCategory.category.categoryName }}</td>
+        <td>Voir</td>
+        <td>update</td>
+        <td>delete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
