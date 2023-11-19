@@ -7,6 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { authGuard } from './auth.guard';
 import { AdminComponent } from './admin/admin.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminNftComponent } from './admin-nft/admin-nft.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
+import { AdminAddressComponent } from './admin-address/admin-address.component';
+import { AdminSubCategoryComponent } from './admin-sub-category/admin-sub-category.component';
+import { AdminCategoryComponent } from './admin-category/admin-category.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -14,6 +20,12 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent, canActivate:[authGuard]},
   {path: 'admin', component: AdminComponent},
+  {path: 'admin-nft', component: AdminNftComponent},
+  {path: 'admin-user', component: AdminUserComponent},
+  {path: 'admin-address', component: AdminAddressComponent},
+  {path: 'admin-sub-category', component: AdminSubCategoryComponent},
+  {path: 'admin-category', component: AdminCategoryComponent},
+  {path: 'register', component: RegisterComponent},
   {path: '**', component: Error404Component}
 ];
 

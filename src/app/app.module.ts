@@ -18,9 +18,18 @@ import { HomeComponent } from './home/home.component';
 import { NftDetailsComponent } from './nft-details/nft-details.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptorProvider } from './token.interceptor';
 import { AdminComponent } from './admin/admin.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChartModule } from 'angular-highcharts';
+import { RegisterComponent } from './register/register.component';
+import { DatePipe } from '@angular/common';
+import { AdminUserComponent } from './admin-user/admin-user.component';
+import { AdminAddressComponent } from './admin-address/admin-address.component';
+import { AdminNftComponent } from './admin-nft/admin-nft.component';
+import { AdminSubCategoryComponent } from './admin-sub-category/admin-sub-category.component';
+import { AdminCategoryComponent } from './admin-category/admin-category.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +48,24 @@ import { AdminComponent } from './admin/admin.component';
     NftDetailsComponent,
     ProfileComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    RegisterComponent,
+    AdminUserComponent,
+    AdminAddressComponent,
+    AdminNftComponent,
+    AdminSubCategoryComponent,
+    AdminCategoryComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule,
+    DatePipe
+    
   ],
   providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]

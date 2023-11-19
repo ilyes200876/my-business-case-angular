@@ -2,18 +2,19 @@ import { AddressInterface } from "./address-interface";
 import { NftInterface } from "./nft-interface";
 
 export interface UserInterface {
-  id: number,
-  email: string,
-  password: string,
-  gender: string,
-  firstNale: string,
-  lastName: string,
-  nickname: string,
-  birthDate: Date,
-  roles: string[],
-  isOwner: boolean,
-  nfts: NftInterface[],
-  address: AddressInterface[]
+  id?: number,
+  email?: string,
+  password?: string,
+  gender?: string,
+  firstName?: string,
+  lastName?: string,
+  nickname?: string,
+  birthDate?: Date,
+  roles?: string[],
+  isOwner?: boolean,
+  profilePic?: string,
+  nfts?: NftInterface[],
+  address?: AddressInterface[]
 }
 
 export interface CredentialsInterface{

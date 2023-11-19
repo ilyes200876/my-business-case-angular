@@ -1,0 +1,32 @@
+<app-admin-header></app-admin-header>
+
+<div class="container">
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Nom d'utilisateur</th>
+        <th scope="col">Email</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Mettre à jour</th>
+        <th scope="col">supprimer</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+      <tr>
+        <th scope="row">{{ user.id }}</th>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.nickname }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address }}</td>
+        <td>update</td>
+        <td>delete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

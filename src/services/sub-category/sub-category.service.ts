@@ -15,4 +15,9 @@ export class SubCategoryService {
   getAll(){
     return this.http.get<SubCategoryInterface[]>(this.urlSubCategoryAll)
   }
+
+  getSubCategorytById(id: number){
+    return this.http.get<SubCategoryInterface>(this.urlSubCategoryAll + "/show/" + id);
+  }
+
 }

@@ -1,69 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Site nfts</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
-        </li>
-        <li class="nav-item" *ngIf="isAdmin()">
-          <a class="nav-link active" aria-current="page" routerLink="/admin" >Administration</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/profile/{{ userData?.id }}">Profil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" *ngIf="!loggedIn()" aria-current="page" routerLink="/login">Se connecter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" *ngIf="loggedIn()" aria-current="page" routerLink="/" (click)="loggedout()">Se déconnecter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/article">Article</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/user">Users</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact2">Contact2</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/user">Users</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> -->
-      <!-- </ul> -->
-      <!-- <form class="d-flex">
-        
-        <div *ngIf="isConnected == 1">
-          <button class="btn btn-outline-success" type="submit">Profil</button>
-        </div>
-
-        <div *ngIf="isConnected == 0">
-          <button class="btn btn-outline-danger" type="submit">Se connecter</button>
-        </div>
-
-      </form>
-    </div>
-  </div>
-</nav> -->
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light navBar1">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/"><img src="../../assets/images/ArtStoreLogo.png" alt="logo du site ArtStore"></a>
@@ -96,19 +30,25 @@
         <li class="nav-item" *ngIf="loggedIn()">
           <a class="nav-link active" aria-current="page" routerLink="/" (click)="loggedout()">Se déconnecter</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" *ngIf="isAdmin()" routerLink="/admin" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown" *ngIf="isAdmin()">
+          <a class="nav-link dropdown-toggle" routerLink="/admin" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Administration
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/admin-user">Liste des utilisateurs</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" routerLink="/admin-_nft">Liste des nfts</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="/admin-sub-category">Liste des sous-catégories</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="/admin-category">Liste des catégorie</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="/admin-address">Liste des adresses</a></li>
           </ul>
         </li>
+
       </ul>
-      <a href="">Inscrivez-vous</a>
+      <a routerLink="/register">Inscrivez-vous</a>
     </div>
   </div>
 </nav>

@@ -1,0 +1,100 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="register()">
+    <div class="min-vh-100 d-flex justify-content-center align-items-center">
+      <div class="container bg-primary text-white rounded d-flex justify-content-center">
+        <div class="row">
+          <h1 class="text-center text-decoration-underline">Inscrivez-vous</h1>
+          <div class="row pr-3 ps-4">
+            <div class="col-md-6">
+              <label for="firstName">Prénom</label>
+              <div>
+                <input type="text" class="form-control"  id="firstName" formControlName="firstName" minlength="3" maxlength="20" required placeholder="prénom"><br><br>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="lastName">Nom</label>
+              <input type="text" class="form-control" id="lastName" minlength="4" maxlength="20" required formControlName="lastName" placeholder="nom"><br><br>
+            </div>
+          </div>
+          <div class="row pr-6 ps-3">
+            <div class=" col-6 col-md-4">
+              <label for="bithdate">Date de Naissance</label>
+              <input type="date" class="form-control" formControlName="birthDate" id="birthdate" required><br><br>
+            </div>
+            
+            <div class="col-2 col-md-2 ps-3">
+              <legend class="lead">Sexe</legend>
+              <input class="form-check-input mt-1" type="radio" value="male" aria-label="Radio button for following text input" formControlName="gender" id="male">
+              <label for="male">Homme</label><br><br>
+            </div>
+            <div class="col-2 col-md-2">
+              <legend class="lead text-primary">Sexe</legend>
+              <input class="form-check-input mt-1" type="radio" value="female" aria-label="Radio button for following text input" formControlName="gender" id="female">
+              <label for="female">Femme</label><br><br>
+            </div>
+            <div class="col-1 col-md-2">
+              <legend class="lead text-primary">Sexe</legend>
+              <input class="form-check-input mt-1" type="radio" value="other" aria-label="Radio button for following text input" formControlName="gender" id="other">
+              <label for="other">autre</label><br><br>
+            </div>
+          </div>
+          <div class=" row pr-3 ps-4">
+            <div class="col-8">
+              <label for="street">Adresse</label>
+              <input type="text" class="form-control" id="street" formControlName="street" minlength="5" maxlength="70" required><br><br>
+            </div>
+            <div class="col-4">
+              <label for="zipCode">Code Postal</label>
+              <div>
+                <input type="text" class="form-control" id="zipCode" formControlName="zipCode" minlength="3" maxlength="7" required><br><br>
+              </div>
+            </div>
+          </div>
+          <div class=" row pr-3 ps-4">
+            <div class="col-6 col-md-6">
+              <label for="department">Département</label>
+              <input type="text" class="form-control" id="department" formControlName="department" minlength="5" maxlength="20" required><br><br>
+            </div>
+            <div class="col-6 col-md-6">
+              <label for="country">Pays</label>
+              <div>
+                <input type="text" class="form-control" id="country" formControlName="country" minlength="3" maxlength="7" required><br><br>
+              </div>
+            </div>
+          </div>
+          <div class="row pr-3 ps-4">
+            <div class="col-md-6">
+              <label for="username">Nom d'utilisateur</label>
+              <div>
+                <input type="text" class="form-control" id="username" formControlName="username" minlength="3" maxlength="7" required><br><br>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="profilePic">Image de profil</label>
+              <div>
+                <input type="text" class="form-control" id="profilePic" formControlName="profilePic" required><br><br>
+              </div>
+            </div>
+          </div>
+          <div class="row pr-3 ps-4">
+            <div class="col-md-6">
+              <label for="email">Email</label>
+              <div>
+                <input type="email" class="form-control" id="email" formControlName="email" required placeholder="email"><br><br>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="password">Mot de passe</label>
+              <div>
+                <input type="password" class="form-control" id="password" formControlName="password" minlength="6" maxlength="30" required><br><br>
+              </div>
+            </div>
+          </div>
+          <div class="text-center my-3 py-3">
+            <button type="submit" class="btn btn-light text-center text-dark">Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

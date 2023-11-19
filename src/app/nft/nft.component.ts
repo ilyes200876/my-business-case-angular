@@ -5,9 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { urlApi, urlUploadPicture } from '../environmental/environmental';
 import { UserService } from 'src/services/user/user.service';
 import { UserInterface } from '../interfaces/user-interface';
-import { FormControl, FormGroup } from '@angular/forms';
 import { SubCategoryService } from '../../services/sub-category/sub-category.service';
 import { SubCategoryInterface } from '../interfaces/sub-category-interface';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
