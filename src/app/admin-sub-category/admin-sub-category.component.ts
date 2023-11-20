@@ -9,6 +9,7 @@ import { SubCategoryInterface } from '../interfaces/sub-category-interface';
 })
 export class AdminSubCategoryComponent {
 
+  subCategoryParent: SubCategoryInterface;
   subCatergories: SubCategoryInterface[] = [];
 
   constructor(private subCategoryService: SubCategoryService){}

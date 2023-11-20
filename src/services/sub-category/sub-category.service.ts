@@ -24,7 +24,7 @@ export class SubCategoryService {
   addSubCategory(subCategory : SubCategoryInterface){
     let body = JSON.stringify(subCategory);
     let header = { 'content-type': 'application/x-www-form-urlencoded'};
-    return this.http.post<any>(urlApi + "/sub-category/add", body, {'headers': header})
+    return this.http.post<any>(this.urlSubCategoryAll + "/add", body, {'headers': header})
     .pipe(
       catchError((error: any) => {
         console.error(error);
@@ -36,11 +36,11 @@ export class SubCategoryService {
   updateSubCategory(id: number, data: any){
     const body = JSON.stringify(data);
     const header = { 'content-type': 'application/x-www-form-urlencoded'};
-    return this.http.put<any>(urlApi + "/update/" + id, body,  {'headers': header});
+    return this.http.put<any>(this.urlSubCategoryAll + "/update/" + id, body,  {'headers': header});
   }
 
   deleteSubCategoey(id: number): Observable<any>{
-    return this.http.delete<any>(urlApi + '/delete/' + id);
+    return this.http.delete<any>(this.urlSubCategoryAll + '/delete/' + id);
   }
 
 }

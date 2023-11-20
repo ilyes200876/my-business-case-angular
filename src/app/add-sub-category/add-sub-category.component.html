@@ -1,0 +1,23 @@
+<h2 class="text-center">Ajoutez ue sous-category</h2>
+
+<form [formGroup]="formSubCategory" class="my-5" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="name" class="form-label">Nom de la sous-category</label>
+        <input type="text" formControlName="name" id="name" class="form-control">
+      </div>
+      <div class="col-md-8">
+        <legend class="lead text-primary">choisissez la categorie</legend>
+        <div *ngFor="let category of categories">
+          <input type="radio" formControlName="category" value="{{ category.categoryName }}" id="{{ category.categoryName }}" class="form-control">
+          <label for="{{ category.categoryName }}" class="form-label">{{ category.categoryName }}</label>
+        </div>
+      </div>
+    </div> 
+    
+  </div>
+  <div class="text-center mt-4">
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </div>
+</form>

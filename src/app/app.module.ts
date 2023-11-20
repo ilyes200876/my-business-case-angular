@@ -30,6 +30,7 @@ import { AdminNftComponent } from './admin-nft/admin-nft.component';
 import { AdminSubCategoryComponent } from './admin-sub-category/admin-sub-category.component';
 import { AdminCategoryComponent } from './admin-category/admin-category.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
     AdminNftComponent,
     AdminSubCategoryComponent,
     AdminCategoryComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    AddSubCategoryComponent
   ],
   imports: [
     BrowserModule,
