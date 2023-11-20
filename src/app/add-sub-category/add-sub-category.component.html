@@ -10,8 +10,8 @@
       <div class="col-md-8">
         <legend class="lead text-primary">choisissez la categorie</legend>
         <div *ngFor="let category of categories">
-          <input type="radio" formControlName="category" value="{{ category.categoryName }}" id="{{ category.categoryName }}" class="form-control">
-          <label for="{{ category.categoryName }}" class="form-label">{{ category.categoryName }}</label>
+          <input type="radio" formControlName="category" value="{{ category.id }}" id="{{ category.id }}">
+          <label for="{{ category.id }}">{{ category.categoryName }}</label>
         </div>
       </div>
     </div> 

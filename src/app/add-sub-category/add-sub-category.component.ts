@@ -26,7 +26,7 @@ export class AddSubCategoryComponent implements OnInit{
 
   public formSubCategory: FormGroup = new FormGroup({
     name: new FormControl(''),
-    category: new FormControl('')
+    category: new FormControl(null)
   });
 
   onSubmit(){

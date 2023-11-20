@@ -66,7 +66,7 @@ import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.com
     FormsModule,
     ReactiveFormsModule,
     ChartModule,
-    DatePipe
+    DatePipe,
     
   ],
   providers: [TokenInterceptorProvider],

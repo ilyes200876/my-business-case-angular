@@ -13,14 +13,14 @@
         <th scope="col">supprimer</th>
       </tr>
     </thead>
-    <tbody *ngFor="let subCategory of subCatergories">
+    <tbody *ngFor="let subCategory of subCategories; let index = index">
       <tr>
         <th scope="row">{{ subCategory.id }}</th>
         <td>{{ subCategory.subCategoryName }}</td>
         <td>{{ subCategory.category.categoryName }}</td>
         <td>Voir</td>
         <td>update</td>
-        <td>delete</td>
+        <td (click)="deleteSubCategory(subCategory.id, index)">delete</td>
       </tr>
     </tbody>
   </table>

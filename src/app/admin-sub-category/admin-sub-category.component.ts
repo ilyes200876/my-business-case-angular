@@ -10,14 +10,21 @@ import { SubCategoryInterface } from '../interfaces/sub-category-interface';
 export class AdminSubCategoryComponent {
 
   subCategoryParent: SubCategoryInterface;
-  subCatergories: SubCategoryInterface[] = [];
+  subCategories: SubCategoryInterface[] = [];
 
   constructor(private subCategoryService: SubCategoryService){}
 
   ngOnInit(){
     this.subCategoryService.getAll().subscribe(dataSubCategories => {
-      this.subCatergories = dataSubCategories;
-      console.log(this.subCatergories);
+      this.subCategories = dataSubCategories;
+      console.log(this.subCategories);
+    });
+  }
+
+  deleteSubCategory(id: number, index: number) {
+    this.subCategoryService.deleteSubCategoey(id).subscribe(subCategorytDelete => {
+      this.subCategories.splice(index,1);
+      // console.log(this.nftList);
     });
   }
 
