@@ -14,6 +14,7 @@ import { AdminAddressComponent } from './admin-address/admin-address.component';
 import { AdminSubCategoryComponent } from './admin-sub-category/admin-sub-category.component';
 import { AdminCategoryComponent } from './admin-category/admin-category.component';
 import { SubCategoryEditComponent } from './sub-category-edit/sub-category-edit.component';
+import { CategoryEditComponent } from './category-edit/category-edit.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'admin-category', component: AdminCategoryComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'admin-sub-category/:id/update', component: SubCategoryEditComponent},
+  {path: 'admin-category/:id/update', component: CategoryEditComponent},
   {path: '**', component: Error404Component}
 ];
 

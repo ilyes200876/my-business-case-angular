@@ -17,6 +17,7 @@ export class AdminSubCategoryComponent {
   subCategoryParent: SubCategoryInterface;
   subCategories: SubCategoryInterface[] = [];
   categories: CategoryInterface[] = [];
+  // categoryId: number = this.categories['id'];
 
   constructor(private subCategoryService: SubCategoryService,private router: Router, private route:ActivatedRoute, private categoryService: CategoryService){}
 
@@ -84,7 +85,6 @@ export class AdminSubCategoryComponent {
   deleteSubCategory(id: number, index: number) {
     this.subCategoryService.deleteSubCategoey(id).subscribe(subCategorytDelete => {
       this.subCategories.splice(index,1);
-      // console.log(this.nftList);
     });
   }
 

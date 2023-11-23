@@ -24,7 +24,7 @@ export class CategoryService {
   addCategory(category : CategoryInterface){
     let body = JSON.stringify(category);
     let header = { 'content-type': 'application/x-www-form-urlencoded'};
-    return this.http.post<any>(urlApi + "/sub-category/add", body, {'headers': header})
+    return this.http.post<any>(urlApi + "/category/add", body, {'headers': header})
     .pipe(
       catchError((error: any) => {
         console.error(error);
@@ -36,11 +36,11 @@ export class CategoryService {
   updateCategory(id: number, data: any){
     const body = JSON.stringify(data);
     const header = { 'content-type': 'application/x-www-form-urlencoded'};
-    return this.http.put<any>(urlApi + "/update/" + id, body,  {'headers': header});
+    return this.http.put<any>(urlApi + "/category/update/" + id, body,  {'headers': header});
   }
 
   deleteCategory(id: number): Observable<any>{
-    return this.http.delete<any>(urlApi + '/delete/' + id);
+    return this.http.delete<any>(urlApi + '/category/delete/' + id);
   }
   
 }

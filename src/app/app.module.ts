@@ -32,6 +32,7 @@ import { AdminCategoryComponent } from './admin-category/admin-category.componen
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.component';
 import { SubCategoryEditComponent } from './sub-category-edit/sub-category-edit.component';
+import { CategoryEditComponent } from './category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SubCategoryEditComponent } from './sub-category-edit/sub-category-edit.
     AdminCategoryComponent,
     AdminHeaderComponent,
     AddSubCategoryComponent,
-    SubCategoryEditComponent
+    SubCategoryEditComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,

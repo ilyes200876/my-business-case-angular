@@ -27,7 +27,7 @@
   </table>
 </div>
 
-<app-add-sub-category [subCategoryAdd]="subCategoryParent"></app-add-sub-category>
+<!-- <app-add-sub-category [subCategoryAdd]="subCategoryParent"></app-add-sub-category> -->
 
 <h2 class="text-center"> Ajoutez une sous-catégorie</h2>
 
@@ -52,17 +52,16 @@
                   <input type="text" formControlName="name" id="name" class="form-control">
                 </div>
                 <div class="col-md-8">
-                  <legend class="lead text-primary">choisissez la categorie</legend>
-                  <div *ngFor="let category of categories">
-                    <input type="radio" formControlName="category" value="{{ category.id }}" id="{{ category.id }}">
-                    <label for="{{ category.id }}">{{ category.categoryName }}</label>
-                  </div>
+                  <label for="category">Choisissez votre categorie:</label>
+                  <select formControlName="category" id="category">
+                    <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.categoryName }}</option>
+                    </select>
                 </div>
               </div> 
               
             </div>
             <div class="text-center mt-4">
-              <button type="submit" class="btn btn-primary">Ajouter</button>
+              <button type="submit" (click)="closeModal()" class="btn btn-primary">Ajouter</button>
             </div>
           </form>
         </div>

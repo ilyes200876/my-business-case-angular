@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EthService } from 'src/services/eth/eth.service';
 import { EthInterface } from 'src/app/interfaces/eth-interface';
+import { Chart } from 'chart.js/auto'
 // import { Chart } from 'angular-highcharts';
 
 @Component({
