@@ -21,7 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { TokenInterceptorProvider } from './token.interceptor';
 import { AdminComponent } from './admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ChartModule } from 'angular-highcharts';
+// import { ChartModule } from 'angular-highcharts';
 import { RegisterComponent } from './register/register.component';
 import { DatePipe } from '@angular/common';
 import { AdminUserComponent } from './admin-user/admin-user.component';
@@ -31,6 +31,7 @@ import { AdminSubCategoryComponent } from './admin-sub-category/admin-sub-catego
 import { AdminCategoryComponent } from './admin-category/admin-category.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.component';
+import { SubCategoryEditComponent } from './sub-category-edit/sub-category-edit.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.com
     AdminSubCategoryComponent,
     AdminCategoryComponent,
     AdminHeaderComponent,
-    AddSubCategoryComponent
+    AddSubCategoryComponent,
+    SubCategoryEditComponent
   ],
   imports: [
     BrowserModule,
@@ -65,9 +67,8 @@ import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.com
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ChartModule,
-    DatePipe,
-    
+    // ChartModule,
+    DatePipe
   ],
   providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]

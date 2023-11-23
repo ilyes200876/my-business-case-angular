@@ -44,7 +44,7 @@ export class AddSubCategoryComponent implements OnInit{
     });
 
     }
-    }
+  }
 
 
 }

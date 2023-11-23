@@ -1,0 +1,15 @@
+<div>
+  <h2 class="text-center">mettre à jour votre sous-categorie</h2>
+</div>
+
+<div>
+  <form [formGroup]="formUpdate" (ngSubmit)="onSubmit()">
+    <div class="container text-center">
+      <div>
+        <label for="subCategoryName" class="form-label">Nom de la sous-category</label>
+        <input type="text" formControlName="subCategoryName" id="subCategoryName" class="form-control" >
+      </div>
+      <button class="btn btn-success" type="submit">Valider</button>
+    </div>
+  </form>
+</div>
