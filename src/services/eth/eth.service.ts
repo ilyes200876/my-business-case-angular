@@ -12,6 +12,6 @@ export class EthService {
   constructor(private http: HttpClient) { }
 
   getEthPrice(): Observable<EthInterface[]>{
-    return this.http.get<EthInterface[]>(urlApi + "eth");
+    return this.http.get<EthInterface[]>(urlApi + "/eth");
   }
 }

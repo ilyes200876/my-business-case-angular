@@ -26,7 +26,7 @@
         <td>{{ user.email }}</td>
         <td>{{ user.birthDate | date:"shortDate" }}</td>
         <!-- <td><span {{  }}>{{ address.street }} {{ address.department }} {{ address.zipCode }} {{ address.country }}</span></td> -->
-        <td>{{ user.address?.street }} {{ user.address?.department }} {{ user.address?.zipCode }} {{ user.address?.country }}</td>
+        <td>{{ user.address.street }} {{ user.address.department }} {{ user.address.zipCode }} {{ user.address.country }}</td>
 
         <td>{{ user.gender }}</td>
         <td>{{ user.roles }}</td>

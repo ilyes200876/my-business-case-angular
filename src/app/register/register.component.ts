@@ -36,6 +36,7 @@ export class RegisterComponent {
       // let formattedBirthDate = this.datePipe.transform(this.form.value.birth, 'dd/MM/yyyy');
       // let hashedPassword = bcrypt.hashSync(this.form.value.password, 10);
       let user: UserInterface = {
+        id:0,
         roles: [],
         firstName: this.form.value.firstName,
         lastName: this.form.value.lastName,
@@ -51,8 +52,9 @@ export class RegisterComponent {
             zipCode: this.form.value.zipCode,
             department: this.form.value.department,
             country: this.form.value.country
-          }
-        
+          },
+        nfts: [],
+        isOwner: true
       };
 
     this.userService.createUser(user).subscribe(response => {

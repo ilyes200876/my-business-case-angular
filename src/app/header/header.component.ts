@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { UserService } from 'src/services/user/user.service';
+import { UserInterface } from '../interfaces/user-interface';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { UserService } from 'src/services/user/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit{
-  userData: any;
+  userData: UserInterface | undefined;
 
   constructor(private auth: AuthService, private userService: UserService){}
 
@@ -27,9 +28,14 @@ export class HeaderComponent implements OnInit{
 
   getUserData() {
     this.userService.getUserData().subscribe(
-      (userData) => {
-        console.log('Données de l\'utilisateur connecté :', userData);
-        this.userData = userData;
+      (user) => {
+        this.userData = user;
+        console.log('Données de l\'utilisateur connecté :', user);
+        console.log(user?.firstName);
+        console.log(user?.lastName);
+        console.log(user?.nickname);
+        console.log(user?.gender);
+        console.log(user?.email);
       },
       (error) => {
         console.error('Erreur :', error);

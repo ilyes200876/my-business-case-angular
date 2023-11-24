@@ -22,10 +22,10 @@ export class UserService {
 
   getUserDetails(){}
   getUserData(): Observable<UserInterface | undefined> {
-    let loggedInEmail = this.authSErvice.getLoggedInUseremail();
-    console.log('E-mail extrait du token :', loggedInEmail);
     return this.getAllUsers().pipe(
       map((users: UserInterface[]) => {
+        let loggedInEmail = this.authSErvice.getLoggedInUseremail();
+        console.log('E-mail extrait du token :', loggedInEmail);
         console.log('Tous les utilisateurs :', users);
         return users.find(user => user.email === loggedInEmail);
       })
