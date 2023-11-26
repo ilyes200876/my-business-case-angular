@@ -4,12 +4,12 @@ import { UserInterface } from "./user-interface";
 export interface NftInterface {
   id: number,
   price: number,
-  createdAt: Date,
+  createdAt?: Date,
   user: UserInterface,
   title: string,
   src: string,
-  weight: number,
-  format: string,
+  weight?: number,
+  format?: string,
   description: string,
   subCategories: SubCategoryInterface[]
 

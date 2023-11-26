@@ -33,6 +33,7 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.component';
 import { SubCategoryEditComponent } from './sub-category-edit/sub-category-edit.component';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
+import { AddressUpdateComponent } from './address-update/address-update.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CategoryEditComponent } from './category-edit/category-edit.component';
     AdminHeaderComponent,
     AddSubCategoryComponent,
     SubCategoryEditComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    AddressUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -54,7 +54,6 @@ export class AdminCategoryComponent {
       this.formAdd.reset();
       console.log(category);
       this.categories.push(category);
-      this.router.navigate(['/admin-category']);
     });
 
     }

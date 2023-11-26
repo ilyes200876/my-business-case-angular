@@ -36,7 +36,7 @@ export class AddressService {
   updateAddress(id: number, data: any){
     const body = JSON.stringify(data);
     const header = { 'content-type': 'application/x-www-form-urlencoded'};
-    return this.http.put<any>(urlApi + "/update/" + id, body,  {'headers': header});
+    return this.http.put<any>(urlApi + "/address/update/" + id, body,  {'headers': header});
   }
 
   deleteAddress(id: number): Observable<any>{

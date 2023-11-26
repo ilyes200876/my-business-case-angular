@@ -31,11 +31,6 @@ export class HeaderComponent implements OnInit{
       (user) => {
         this.userData = user;
         console.log('Données de l\'utilisateur connecté :', user);
-        console.log(user?.firstName);
-        console.log(user?.lastName);
-        console.log(user?.nickname);
-        console.log(user?.gender);
-        console.log(user?.email);
       },
       (error) => {
         console.error('Erreur :', error);

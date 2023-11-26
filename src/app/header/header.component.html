@@ -4,14 +4,14 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
-    <div  *ngIf="userData?.gender === 'female'">
+
+    <div class="welcome" *ngIf="userData?.gender === 'female'">
       <p>Bienvenue Madame {{ userData?.firstName }}</p>
     </div>
-    <div *ngIf="userData?.gender=== 'male'">
+    <div class="welcome" *ngIf="userData?.gender=== 'male'">
       <p>Bienvenue Monsieur {{ userData?.firstName }}</p>
     </div>
-    <div *ngIf="userData?.gender=== 'other'">
+    <div class="welcome" *ngIf="userData?.gender=== 'other'">
       <p>Bienvenue {{ userData?.firstName }}</p>
     </div>
     <div class="emptyDiv">
@@ -32,7 +32,7 @@
           <a class="nav-link active" aria-current="page" routerLink="/" (click)="loggedout()">Se déconnecter</a>
         </li>
         <li class="nav-item dropdown" *ngIf="isAdmin()">
-          <a class="nav-link dropdown-toggle" routerLink="/admin" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Administration
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -1,7 +1,105 @@
 <p>profile works!</p>
 <div class="container profileData">
   <div class="profilePic"></div>
-  <div class="usernameData">
-    <p>@{{  userData?.nickname }}</p>
+  <div>
+    <div class="usernameData">
+      <p>@{{  userData?.nickname }}</p>
+    </div>
+    <div>
+      <div>
+        <p>{{ userData?.firstName }}</p>
+      </div>
+      <div>
+        <p>{{ userData?.lastName }}</p>
+      </div>
+    </div>
+    <div>
+      <p>{{ userData?.address?.street }} {{ userData?.address?.zipCode }} {{ userData?.address?.department }}, {{ userData?.address?.country }}<a routerLink="/address/{{ userData.address.id }}/update">Modifier votre adresse</a></p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <button (click)="openModal()">Ajoutez un NFT</button>
+</div>
+
+<div class="modal" id="modalUpdate">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" (click)="closeModal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="container">
+            <form [formGroup]="formAdd" class="my-5" (ngSubmit)="addNft()">
+              <div class="min-vh-100 d-flex justify-content-center align-items-center">
+                <div class="container bg-primary text-white rounded d-flex justify-content-center">
+                  <div class="row">
+                    <h1 class="text-center text-decoration-underline">Ajout de NFT</h1>
+                    <div class="row pr-3 ps-4">
+                      <div class="col-md-6">
+                        <label for="title">Titre</label>
+                        <div>
+                          <input type="text" class="form-control"  id="title" formControlName="title" minlength="3" maxlength="20" required placeholder="Titre"><br><br>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="price">Prix</label>
+                        <input type="number" class="form-control" id="price" minlength="4" maxlength="20" required formControlName="price"><br><br>
+                      </div>
+                    </div>
+                    <div class="row pr-6 ps-3">
+                      <div class="col-md-6">
+                        <label for="file">Télécharger votre image</label>
+                        <input type="file" class="form-control" id="file" required formControlName="file" (change)="onChangeFile($event)"><br><br>
+                      </div>
+                      <div class=" col-md-6">
+                        <label for="subCategory">Choisissez votre categorie:</label>
+                        <select formControlName="subCategory" id="subCategory">
+                          <option *ngFor="let subCategory of subCategories" value="{{ subCategory.id }}">{{ subCategory.subCategoryName }}</option>
+                        </select><br><br>
+                      </div>
+                    </div>
+                    <div class=" row pr-3 ps-4">
+                      <div class="col-12">
+                        <label for="description">Description</label>
+                        <textarea formControlName="description" id="description" cols="30" rows="10"></textarea><br><br>
+                      </div>
+                    </div>
+                    <div class="text-center mt-4">
+                      <button type="submit" (click)="closeModal()" class="btn btn-primary">Ajouter</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="closeModal()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-nft></app-nft>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;" *ngFor="let nft of userData.nfts">
+        <img src="{{ nft.src }}" class="card-img-top" alt="{{ nft.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ nft.title }}</h5>
+          <p class="card-text">{{ nft.description }}</p>
+          <p class="card-text">Créé par {{ userData.nickname }} le {{ nft.createdAt | date:'shortDate'}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
