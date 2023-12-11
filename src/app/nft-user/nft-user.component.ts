@@ -22,7 +22,7 @@ export class NftUserComponent implements OnInit{
   // searchedNfts: NftInterface[];
   // searchTerm: string = "";
 
-  constructor(private userService: UserService, private subCategoryService: SubCategoryService, private ethService: EthService){}
+  constructor(private userService: UserService, private subCategoryService: SubCategoryService, private ethService: EthService,private nftService: NftService){}
 
   ngOnInit(): void {
     this.getUserData();
@@ -58,7 +58,9 @@ export class NftUserComponent implements OnInit{
             data.nfts[i].src = urlUploadPicture + data.nfts[i].src;
           }
           this.userData = data;
+          this.nfts = data.nfts;
           console.log(this.userData);
+          console.log(this.nfts);
         }
       },
       (error) => {
@@ -67,5 +69,10 @@ export class NftUserComponent implements OnInit{
     );
   }
 
+  deleteNft(id: number, index: number) {
+    this.nftService.deleteNft(id).subscribe(nftDelete => {
+      this.nfts.splice(index,1);
+    });
+  }
 
 }

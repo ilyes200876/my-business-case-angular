@@ -1,72 +1,7 @@
 
 <app-profile-data></app-profile-data>
 
-<div class="buttonAddNft">
-  <button (click)="openModal()">Ajoutez un NFT</button>
-</div>
-
-<div class="modal" id="modalUpdate">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div>
-        <button type="button" (click)="closeModal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <div class="container">
-            <form [formGroup]="formAdd" class="my-5" (ngSubmit)="addNft()">
-              <div class="min-vh-100 d-flex justify-content-center align-items-center">
-                <div class="container text-white rounded d-flex justify-content-center">
-                  <div class="row">
-                    <h2 class="text-center text-decoration-underline">Ajout de NFT</h2>
-                    <div class="row pr-3 ps-4">
-                      <div class="col-md-6">
-                        <label for="title">Titre</label>
-                        <div>
-                          <input type="text" class="form-control"  id="title" formControlName="title" minlength="3" maxlength="20" required placeholder="Titre"><br><br>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="price">Prix</label>
-                        <input type="number" class="form-control" id="price" minlength="4" maxlength="20" required formControlName="price" placeholder="prix"><br><br>
-                      </div>
-                    </div>
-                    <div class="row pr-6 ps-3">
-                      <div class="col-md-6">
-                        <label for="file">Télécharger votre image</label>
-                        <!-- <input type="file" class="form-control" id="file" required formControlName="file" (change)="onChangeFile($event)"><br><br> -->
-                        <input type="file" class="form-control" id="file" required formControlName="file"><br><br>
-                      </div>
-                      <div class=" col-md-6 subCategories">
-                        <label for="subCategory">Choisissez vos sous-categories</label>
-                        <select formControlName="subCategory" id="subCategory" multiple>
-                          <option *ngFor="let subCategory of subCategories" value="{{ subCategory.id }}">{{ subCategory.subCategoryName }}</option>
-                        </select><br><br>
-                      </div>
-                    </div>
-                    <div class=" row pr-3 ps-4">
-                      <div class="col-12 description">
-                        <label for="description">Description</label>
-                        <textarea formControlName="description" id="description" cols="30" rows="10" placeholder="Votre description">
-
-                        </textarea><br><br>
-                      </div>
-                    </div>
-                    <div class="text-center mt-4">
-                      <button type="submit" (click)="closeModal()" class="buttonSubmit">Ajouter</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+<app-add-nft></app-add-nft>
 
 
 <app-nft-user></app-nft-user>

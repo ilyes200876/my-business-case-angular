@@ -1,0 +1,43 @@
+<section id="editNft">
+  <div class="container backgroundContainer">
+    <div>
+      <h2 class="text-center mt-4">mettre à jour votre sous-categorie</h2>
+    </div>
+  
+    <div>
+      <form class="formInput py-5" [formGroup]="formUpdate" (ngSubmit)="onSubmit()">
+        <div class="container text-center">
+            <div class="row pr-3 ps-4">
+              <div class="col-md-6">
+                <label for="title">Titre</label>
+                <div>
+                  <input type="text" class="form-control"  id="title" formControlName="title" minlength="3" maxlength="20" required placeholder="Titre"><br><br>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="price">Prix</label>
+                <input type="number" class="form-control" id="price" minlength="4" maxlength="20" required formControlName="price" placeholder="prix"><br><br>
+              </div>
+            </div>
+            <div class="row ">
+              <div class=" col-12 subCategories">
+                <label for="subCategories">Choisissez vos sous-categories</label>
+                <select formControlName="subCategories" id="subCategories" multiple>
+                  <option *ngFor="let subCategory of subCategories" value="{{ subCategory.id }}">{{ subCategory.subCategoryName }}</option>
+                </select><br><br>
+              </div>
+            </div>
+            <div class=" row">
+              <div class="col-12 description">
+                <label for="description">Description</label>
+                <textarea formControlName="description" id="description" cols="30" rows="10" placeholder="Votre description">
+
+                </textarea><br><br>
+              </div>
+            </div>
+          <button class="btn mt-4 buttonSubmit" type="submit">Valider</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

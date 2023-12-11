@@ -35,6 +35,8 @@ import { AddressUpdateComponent } from './address-update/address-update.componen
 import { ProfileDataComponent } from './profile-data/profile-data.component';
 import { NftUserComponent } from './nft-user/nft-user.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
+import { AddNftComponent } from './add-nft/add-nft.component';
+import { NftUpdateComponent } from './nft-update/nft-update.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { AddCategoryComponent } from './add-category/add-category.component';
     AddressUpdateComponent,
     ProfileDataComponent,
     NftUserComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    AddNftComponent,
+    NftUpdateComponent
   ],
   imports: [
     BrowserModule,

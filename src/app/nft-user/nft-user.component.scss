@@ -27,6 +27,11 @@
   box-shadow: 5px 5px 10px 2px darkolivegreen;
 }
 
+.fa-trash-can{
+  color: red;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 320px) and (max-width:425px){
   .nftCol{
     display: flex;

@@ -1,4 +1,6 @@
 footer{
+  display: flex;
+  justify-content: start;
   height: 10rem !important;
   width: 100%;
   // top: 0;
@@ -8,4 +10,53 @@ footer{
   background: #00E1B9;
   background: linear-gradient(45deg, #00E1B9 0%, #2388CB 30%, #080F4B 100%);
   margin-top: 5rem;
+  
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 70%;
+    margin-left: 0;
+
+    .divImg{
+      height: 7rem;
+      display: flex;
+      align-items: center;
+      img{
+        height: 5rem !important;
+      }
+    }
+
+    .contact{
+      display: flex;
+      margin-left: 30px;
+      
+      .divContact{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+
+  footer{
+    height: 20rem !important;
+    
+    li{
+      font-size: 12px !important;
+    }
+    .contact{
+      flex-direction: column;
+      margin-left: 0 !important;
+      .divContact{
+        margin-left: 27px;
+      }
+    }
+  
+    img{
+      height: 3rem;
+    }
+  }
 }

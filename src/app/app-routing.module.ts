@@ -16,6 +16,7 @@ import { AdminCategoryComponent } from './admin-category/admin-category.componen
 import { SubCategoryEditComponent } from './sub-category-edit/sub-category-edit.component';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { AddressUpdateComponent } from './address-update/address-update.component';
+import { NftUpdateComponent } from './nft-update/nft-update.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'admin-sub-category/:id/update', component: SubCategoryEditComponent},
   {path: 'admin-category/:id/update', component: CategoryEditComponent},
   {path: 'address/:id/update', component: AddressUpdateComponent},
+  {path: 'nft-update/:id/update', component: NftUpdateComponent},
   {path: '**', component: Error404Component}
 ];
 

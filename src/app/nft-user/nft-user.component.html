@@ -3,7 +3,7 @@
     <h2>Ma galerie</h2>
     <div class="row nftCol">
       
-        <div  class="col-3 cardNft mt-3 ms-1" *ngFor="let nft of userData.nfts">
+        <div  class="col-3 cardNft mt-3 ms-1" *ngFor="let nft of userData.nfts; let index = index">
           <a routerLink="/nft/details/{{ nft.id }}">
             <img src="{{ nft.src }}" class="card-img-top cardImg" alt="{{ nft.title }}">
           </a>
@@ -12,6 +12,10 @@
             <p class="card-text text-center">Types : <span *ngFor="let subCotegory of nft.subCategories">{{ subCotegory.subCategoryName }},</span></p>
             <p class="text-center">{{ nft.price /100 }}<i class="fa-brands fa-ethereum"></i> ~ {{ ethPrice * nft.price / 100 }}€ </p>
             <p class="card-text text-center">Créé le {{ nft.createdAt | date:'shortDate'}} par {{ userData.nickname }}</p>
+            <div class="d-flex justify-content-around">
+              <div class="updateIcon"><a routerLink="/nft-update/{{ nft.id }}/update"><i class="fa-solid fa-file-pen"></i></a></div>
+              <div (click)="deleteNft(nft.id, index)"><i class="fa-solid fa-trash-can"></i></div>
+            </div>
           </div>
         </div>
       
