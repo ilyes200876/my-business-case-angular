@@ -17,7 +17,7 @@ export class SubCategoryEditComponent {
   })
   
   onSubmit(){
-    this.subCategoryService.updateSubCategory(this.route.snapshot.params['id'], this.formUpdate.value).subscribe((result)  => {
+    this.subCategoryService.updateSubCategory(this.route.snapshot.params['id'], this.formUpdate.value).subscribe((result)=>{
       console.log(result);
       this.router.navigate(['/admin-sub-category']);
     })

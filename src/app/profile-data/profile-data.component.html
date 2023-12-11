@@ -1,0 +1,23 @@
+<section>
+  <div class="profileData d-flex justify-content-start">
+    <div class="profilePic">
+      <img src="{{ userData.profilePic }}" alt="avatar de l'utilisateur {{ userData.nickname }}" width="100%">
+    </div>
+    <div class="userDatas">
+      <div class="usernameData">
+        <p>@{{  userData?.nickname }}</p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div>
+          <p class="userFirstName">{{ userData?.firstName }}</p>
+        </div>
+        <div>
+          <p class="userLastName">{{ userData?.lastName }}</p>
+        </div>
+      </div>
+      <div>
+        <p>{{ userData?.address?.street }} {{ userData?.address?.zipCode }} {{ userData?.address?.department }}, {{ userData?.address?.country }}    <a routerLink="/address/{{ userData.address.id }}/update">Modifier votre adresse</a></p>
+      </div>
+    </div>
+  </div>
+</section>

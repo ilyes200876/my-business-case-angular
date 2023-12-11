@@ -6,25 +6,25 @@
     <thead>
       <tr>
         <th scope="col">id</th>
-        <th scope="col">Rue</th>
-        <th scope="col">Département</th>
-        <th scope="col">Code Zip</th>
-        <th scope="col">Pays</th>
+        <th class="responsiveHidden" scope="col">Rue</th>
+        <th class="responsiveHidden" scope="col">Département</th>
+        <th class="responsiveHidden" scope="col">Code Zip</th>
+        <th class="responsiveHidden" scope="col">Pays</th>
         <th scope="col">Utilisateurs</th>
-        <th scope="col">mettre à jour</th>
-        <th scope="col">supprimer</th>
+        <th class="center" scope="col">mettre à jour</th>
+        <th class="center" scope="col">supprimer</th>
       </tr>
     </thead>
     <tbody *ngFor="let address of addresses">
       <tr>
         <th scope="row">{{ address.id }}</th>
-        <td>{{ address.street }}</td>
-        <td>{{ address.department }}</td>
-        <td>{{ address.zipCode }}</td>
-        <td>{{ address.country }}</td>
+        <td class="responsiveHidden">{{ address.street }}</td>
+        <td class="responsiveHidden">{{ address.department }}</td>
+        <td class="responsiveHidden">{{ address.zipCode }}</td>
+        <td class="responsiveHidden">{{ address.country }}</td>
         <td><span *ngFor="let user of address.users"> {{ user.firstName }} {{ user.lastName }}, </span></td>
-        <td>update</td>
-        <td>delete</td>
+        <td class="center"><a routerLink="/admin-sub-category/{{ address.id }}/update"><i class="fa-solid fa-file-pen"></i></a></td>
+        <td class="center"><i class="fa-solid fa-trash-can"></i></td>
       </tr>
     </tbody>
   </table>

@@ -12,7 +12,7 @@ import { SubCategoryService } from 'src/services/sub-category/sub-category.servi
 })
 export class AddSubCategoryComponent implements OnInit{
 
-  @Input() subCategoryAdd: SubCategoryInterface;
+  // subCategories: SubCategoryInterface[] = [];
   categories: CategoryInterface[] = [];
 
   constructor(private categoryService: CategoryService, private subCategoryService: SubCategoryService){}
@@ -24,25 +24,41 @@ export class AddSubCategoryComponent implements OnInit{
     });
   }
 
-  public formSubCategory: FormGroup = new FormGroup({
+  public formAdd: FormGroup = new FormGroup({
     name: new FormControl(''),
     category: new FormControl(null)
-  });
+  })
+
+  openModal(){
+    const modalDiv = document.getElementById('modalUpdate');
+    if(modalDiv != null){
+      modalDiv.style.display = 'block';
+    }
+  }
+
+  closeModal(){
+    const modalDiv = document.getElementById('modalUpdate');
+    if(modalDiv != null){
+      modalDiv.style.display = 'none';
+    }
+  }
 
   onSubmit(){
-    if(this.formSubCategory.valid){
+    if(this.formAdd.valid){
       let subCategory: SubCategoryInterface = {
         id: 0,
-        subCategoryName: this.formSubCategory.value.name,
-        category: this.formSubCategory.value.category,
+        subCategoryName: this.formAdd.value.name,
+        category: {
+          id: this.formAdd.value.category,
+          categoryName: '',
+          subCategories: []
+        },
         nfts: []
       };
-
-    this.subCategoryService.addSubCategory(subCategory).subscribe(response => {
-      this.formSubCategory.reset();
-      console.log(subCategory);
-    });
-
+      this.subCategoryService.addSubCategory(subCategory).subscribe(response => {
+        this.formAdd.reset();
+        console.log(subCategory);
+      });
     }
   }
 

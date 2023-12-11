@@ -1,0 +1,42 @@
+@import 'src/assets/variables';
+
+.nftDetails{
+  background-color: $mainColor;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 5px 5px 10px grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-bottom: 0.1rem;
+}
+
+h3{
+  text-shadow: 4px 4px 4px darkslategray;
+}
+
+span{
+  font-weight: 700;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 425px){
+  .nftDetails{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 3426px) and (max-width: 768px){
+  .nftDetails{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
+  }
+}

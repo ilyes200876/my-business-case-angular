@@ -5,33 +5,31 @@
     <thead>
       <tr>
         <th scope="col">id</th>
-        <th scope="col">Prénom</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Nom d'utilisateur</th>
+        <th class="responsiveHidden" scope="col">Prénom</th>
+        <th class="responsiveHidden" scope="col">Nom</th>
+        <th class="responsiveHidden" scope="col">Nom d'utilisateur</th>
         <th scope="col">Email</th>
-        <th scope="col">date de naissance</th>
-        <th scope="col">Adresse</th>
-        <th scope="col">Genre</th>
-        <th scope="col">Roles</th>
-        <th scope="col">Mettre à jour</th>
-        <th scope="col">supprimer</th>
+        <th class="responsiveHidden" scope="col">date de naissance</th>
+        <th class="responsiveHidden" scope="col">Adresse</th>
+        <th class="responsiveHidden" scope="col">Genre</th>
+        <th class="responsiveHidden" scope="col">Roles</th>
+        <th class="center" scope="col">Mettre à jour</th>
+        <th class="center" scope="col">supprimer</th>
       </tr>
     </thead>
     <tbody *ngFor="let user of users">
       <tr>
         <th scope="row">{{ user.id }}</th>
-        <td>{{ user.firstName }}</td>
-        <td>{{ user.lastName }}</td>
-        <td>{{ user.nickname }}</td>
+        <td class="responsiveHidden">{{ user.firstName }}</td>
+        <td class="responsiveHidden">{{ user.lastName }}</td>
+        <td class="responsiveHidden">{{ user.nickname }}</td>
         <td>{{ user.email }}</td>
-        <td>{{ user.birthDate | date:"shortDate" }}</td>
-        <!-- <td><span {{  }}>{{ address.street }} {{ address.department }} {{ address.zipCode }} {{ address.country }}</span></td> -->
-        <td>{{ user.address.street }} {{ user.address.department }} {{ user.address.zipCode }} {{ user.address.country }}</td>
-
-        <td>{{ user.gender }}</td>
-        <td>{{ user.roles }}</td>
-        <td>update</td>
-        <td>delete</td>
+        <td class="responsiveHidden">{{ user.birthDate | date:"shortDate" }}</td>
+        <td class="responsiveHidden">{{ user.address?.street }} {{ user.address?.department }} {{ user.address?.zipCode }} {{ user.address?.country }}</td>
+        <td class="responsiveHidden">{{ user.gender }}</td>
+        <td class="responsiveHidden">{{ user.roles }}</td>
+        <td class="center"><i class="fa-solid fa-file-pen"></i></td>
+        <td class="center"><i class="fa-solid fa-trash-can"></i></td>
       </tr>
     </tbody>
   </table>

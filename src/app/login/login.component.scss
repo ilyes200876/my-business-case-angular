@@ -1,0 +1,32 @@
+@import 'src/assets/variables.scss';
+
+#formLogin{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin:0;
+
+  .backgroundContainer{
+    background: linear-gradient($backGroundColorOne, $backGroundColorTwo);
+    border-radius: 22px;
+  
+    .formInputs{
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .input{
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px){
+    .backgroundContainer{
+      min-width: 90%;
+    }
+}

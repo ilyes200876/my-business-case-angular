@@ -10,7 +10,6 @@ import { UserComponent } from './user/user.component';
 import { EthComponent } from './eth/eth.component';
 import { CategoryComponent } from './category/category.component';
 import { SubCategoryComponent } from './sub-category/sub-category.component';
-import { MediaComponent } from './media/media.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Error404Component } from './error404/error404.component';
@@ -21,7 +20,6 @@ import { LoginComponent } from './login/login.component';
 import { TokenInterceptorProvider } from './token.interceptor';
 import { AdminComponent } from './admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { ChartModule } from 'angular-highcharts';
 import { RegisterComponent } from './register/register.component';
 import { DatePipe } from '@angular/common';
 import { AdminUserComponent } from './admin-user/admin-user.component';
@@ -34,6 +32,9 @@ import { AddSubCategoryComponent } from './add-sub-category/add-sub-category.com
 import { SubCategoryEditComponent } from './sub-category-edit/sub-category-edit.component';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { AddressUpdateComponent } from './address-update/address-update.component';
+import { ProfileDataComponent } from './profile-data/profile-data.component';
+import { NftUserComponent } from './nft-user/nft-user.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,6 @@ import { AddressUpdateComponent } from './address-update/address-update.componen
     EthComponent,
     CategoryComponent,
     SubCategoryComponent,
-    MediaComponent,
     HeaderComponent,
     FooterComponent,
     Error404Component,
@@ -63,7 +63,10 @@ import { AddressUpdateComponent } from './address-update/address-update.componen
     AddSubCategoryComponent,
     SubCategoryEditComponent,
     CategoryEditComponent,
-    AddressUpdateComponent
+    AddressUpdateComponent,
+    ProfileDataComponent,
+    NftUserComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,6 @@ import { AddressUpdateComponent } from './address-update/address-update.componen
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    // ChartModule,
     DatePipe
   ],
   providers: [TokenInterceptorProvider],

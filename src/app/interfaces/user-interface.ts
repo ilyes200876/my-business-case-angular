@@ -11,10 +11,9 @@ export interface UserInterface {
   nickname: string,
   birthDate: Date,
   roles: string[],
-  isOwner: boolean,
   profilePic: string,
   nfts: NftInterface[],
-  address: AddressInterface
+  address?: AddressInterface
 }
 
 export interface CredentialsInterface{

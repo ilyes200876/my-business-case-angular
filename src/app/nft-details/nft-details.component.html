@@ -1,14 +1,15 @@
 <div class="container my-5">
   <div class="row">
-    <div class="col col-md-6">
-      <img src="{{ nft?.src}}" class="w-100">
+    <div class="col-md-6 imgContainer d-flex align-items-center">
+      <img src="{{ nft.src}}" class="w-100">
     </div>
-    <div class="col col-md-6">
-      <h3>{{ nft?.title }}</h3>
-      <p>créee le {{ nft?.createdAt | date: "longDate"}}</p>
-      <p>par {{ nft?.user?.nickname}}</p>
-      <p>{{ nft?.description }}</p>
-      <p>Les sousCatégories : <span *ngFor="let subCategoryName of nft?.subCategories">{{ subCategoryName?.subCategoryName }}</span></p>
+    <div class="col-md-6 nftDetails">
+      <h3 class="text-center">{{ nft.title }}</h3>
+      <p class="text-center"><i>créee le {{ nft.createdAt | date: "longDate"}}</i></p>
+      <p class="text-center">par <b>{{ nft.user.nickname}}</b></p>
+      <p class="text-center"><i>prix : {{ nft.price /100 }}<i class="fa-brands fa-ethereum"></i> ~ {{ ethPrice * nft.price / 100 }}€ </i></p>
+      <p>{{ nft.description }}</p>
+      <p class="subCategories"><i>Les sousCatégories :</i> <span *ngFor="let subCategoryName of nft?.subCategories">{{ subCategoryName?.subCategoryName }}</span></p>
     </div>
   </div>
 </div>

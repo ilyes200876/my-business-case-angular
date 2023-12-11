@@ -1,30 +1,36 @@
-<div class="container">
-  <form [formGroup]="formUpdate" class="my-5" (ngSubmit)="updateAddress()">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <label for="street" class="form-label">Rue</label>
-          <input type="text" formControlName="street" id="street" class="form-control">
-        </div>
-      </div> 
-      <div class="row">
-        <div class="col-md-4">
-          <label for="zipCode" class="form-label">code Postal</label>
-          <input type="text" formControlName="zipCode" id="zipCode" class="form-control">
-        </div>
-        <div class="col-md-4">
-          <label for="department" class="form-label">Département</label>
-          <input type="text" formControlName="department" id="department" class="form-control">
-        </div>
-        <div class="col-md-4">
-          <label for="country" class="form-label">Pays</label>
-          <input type="text" formControlName="country" id="country" class="form-control">
-        </div>
-      </div> 
+<section id="editAddress">
+  <div class="container backgroundContainer">
+    <div>
+      <h2 class="text-center mt-4">mettre à jour votre address</h2>
     </div>
-    <div class="text-center mt-4">
-      <button type="submit" class="btn btn-primary">Modifier</button>
+    <div>
+      <form [formGroup]="formUpdate" class="formInput my-5" (ngSubmit)="updateAddress()">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <label for="street" class="form-label">Rue</label>
+              <input type="text" formControlName="street" id="street" class="form-control">
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col-md-4">
+              <label for="zipCode" class="form-label">code Postal</label>
+              <input type="text" formControlName="zipCode" id="zipCode" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label for="department" class="form-label">Département</label>
+              <input type="text" formControlName="department" id="department" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label for="country" class="form-label">Pays</label>
+              <input type="text" formControlName="country" id="country" class="form-control">
+            </div>
+          </div> 
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn buttonSubmit">Modifier</button>
+        </div>
+      </form>  
     </div>
-  </form>
-
-</div>
+  </div>
+</section>

@@ -8,6 +8,7 @@ import { UserInterface } from '../interfaces/user-interface';
 import { SubCategoryService } from '../../services/sub-category/sub-category.service';
 import { SubCategoryInterface } from '../interfaces/sub-category-interface';
 import { FormControl, FormGroup } from '@angular/forms';
+import { EthService } from 'src/services/eth/eth.service';
 
 
 @Component({
@@ -23,8 +24,10 @@ export class NftComponent implements OnInit{
   searchTerm: string = "";
   users: UserInterface[] =[];
   subCategories: SubCategoryInterface[];
+  // etheValue: number[] = [];
+  ethPrice: number;
 
-  constructor(private nftService: NftService, private route: ActivatedRoute, private userService: UserService, private subCategoryService: SubCategoryService){}
+  constructor(private nftService: NftService, private route: ActivatedRoute, private userService: UserService, private subCategoryService: SubCategoryService, private ethService: EthService){}
 
   ngOnInit(){
     this.nftService.getAll().subscribe(data => {
@@ -32,19 +35,26 @@ export class NftComponent implements OnInit{
         data[i].src = urlUploadPicture + data[i].src;
       }
       this.nfts = data;
-      // this.searchedNfts;
     });
+
+    // this.userService.getAllUsers().subscribe(dataUser => {
+    //   this.users = dataUser;
+    //   console.log(this.users);
+    // });
+    // console.log(this.users);
     
-    this.userService.getAllUsers().subscribe(dataUser => {
-      this.users = dataUser;
-      console.log(this.users);
-    });
-    console.log(this.users);
-  
     this.showSubCategories();
-
+    this.showPriceNft()
+    
   }
-
+  
+  showPriceNft(){
+    this.ethService.getEthPrice().subscribe(ethData =>{
+      this.ethPrice = ethData[0].ethValue ;
+      console.log(this.ethPrice);
+    });
+  }
+  
   showSubCategories(){
     this.subCategoryService.getAll().subscribe(subCategoriesData=>{
       this.subCategories = subCategoriesData;

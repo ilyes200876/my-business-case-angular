@@ -11,65 +11,21 @@
         <th scope="col">id</th>
         <th scope="col">Nom de la sous-catégorie</th>
         <th scope="col">La catégorie</th>
-        <th scope="col">mettre à jour</th>
-        <th scope="col">supprimer</th>
+        <th class="center" scope="col">Mettre à jour</th>
+        <th class="center" scope="col">Supprimer</th>
       </tr>
     </thead>
     <tbody *ngFor="let subCategory of subCategories; let index = index">
       <tr>
         <th scope="row">{{ subCategory.id }}</th>
         <td>{{ subCategory.subCategoryName }}</td>
-        <td>{{ subCategory.category.categoryName }}</td>
-        <td ><a routerLink="/admin-sub-category/{{ subCategory.id }}/update">update</a></td>
-        <td (click)="deleteSubCategory(subCategory.id, index)">delete</td>
+        <td>{{ subCategory.category?.categoryName }}</td>
+        <td class="center"><a routerLink="/admin-sub-category/{{ subCategory.id }}/update"><i class="fa-solid fa-file-pen"></i></a></td>
+        <td class="center" (click)="deleteSubCategory(subCategory.id, index)"><i class="fa-solid fa-trash-can"></i></td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<!-- <app-add-sub-category [subCategoryAdd]="subCategoryParent"></app-add-sub-category> -->
+<app-add-sub-category></app-add-sub-category>
 
-<h2 class="text-center"> Ajoutez une sous-catégorie</h2>
-
-<div class="text-center">
-  <button (click)="openModal()">Ajouter</button>
-</div>
-
-<div class="modal" id="modalUpdate">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" (click)="closeModal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <form [formGroup]="formAdd" class="my-5" (ngSubmit)="onSubmit()">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4">
-                  <label for="name" class="form-label">Nom de la sous-category</label>
-                  <input type="text" formControlName="name" id="name" class="form-control">
-                </div>
-                <div class="col-md-8">
-                  <label for="category">Choisissez votre categorie:</label>
-                  <select formControlName="category" id="category">
-                    <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.categoryName }}</option>
-                  </select>
-                </div>
-              </div> 
-              
-            </div>
-            <div class="text-center mt-4">
-              <button type="submit" (click)="closeModal()" class="btn btn-primary">Ajouter</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" (click)="closeModal()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>

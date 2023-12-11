@@ -37,8 +37,8 @@ export class ProfileComponent implements OnInit{
           for(let i = 0; i < data.nfts.length; i++){
             data.nfts[i].src = urlUploadPicture + data.nfts[i].src;
           }
-          
           this.userData = data;
+          // console.log(this.userData.profilePic);
         }
       },
       (error) => {
@@ -52,6 +52,7 @@ export class ProfileComponent implements OnInit{
     price: new FormControl(''),
     description: new FormControl(''),
     subCategory: new FormControl(''),
+    file: new FormControl(''),
   })
 
   openModal(){
@@ -77,30 +78,38 @@ export class ProfileComponent implements OnInit{
         price: this.formAdd.value.price,
         title: this.formAdd.value.title,
         description: this.formAdd.value.description,
-        subCategories: this.formAdd.value.subCatory,
+        subCategories: [
+          {
+          id: this.formAdd.value.subCategory
+          }
+        ],
+
+        
         src: this.formAdd.value.file,
         user: this.userData.id
       }
 
-      this.onChangeFile(event);
+      // this.onChangeFile(event);
 
       this.nftService.addNft(nft).subscribe(response => {
         this.formAdd.reset();
+        // urlUploadPicture.push(this.formAdd.value.file);
+        console.log(response);
         console.log(nft);
         this.userData.nfts.push(nft);
       })
     }
   }
 
-  onChangeFile(event: any){
-    if(event.target.files.length > 0){
-      const file = event.target.files[0];
-      const formData = new FormData();
-      formData.append('file', file);
-      this.http.post(urlUploadPicture, formData).subscribe((response:any) => {
-        debugger;
-      })
-    }
-  }
+  // onChangeFile(event: any){
+  //   if(event.target.files.length > 0){
+  //     const file = event.target.files[0];
+  //     const formData = new FormData();
+  //     formData.append('file', file);
+  //     this.http.post(urlUploadPicture, formData).subscribe((response:any) => {
+  //       debugger;
+  //     })
+  //   }
+  // }
 
 }

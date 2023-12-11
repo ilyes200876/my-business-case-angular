@@ -1,0 +1,48 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.center{
+  text-align: center;
+}
+
+.fa-trash-can{
+  color: red;
+  cursor: pointer;
+}
+
+.fa-file-pen{
+  color: blue;
+  cursor: pointer;
+}
+
+.fa-eye{
+  color: green;
+  cursor: pointer;
+}
+
+.fa-ethereum{
+  color: rgb(10, 10, 103);
+}
+.price{
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+th{
+  font-family: 'Kalnia',serif;
+}
+
+td{
+  font-family: 'Lato', sans-serif;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .responsiveHidden{
+    display: none;
+  }
+  th,td{
+    font-size: 12px;
+  }
+}

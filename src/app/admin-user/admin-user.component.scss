@@ -1,0 +1,41 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.center{
+  text-align: center;
+}
+
+.fa-trash-can{
+  color: red;
+  cursor: pointer;
+}
+
+.fa-file-pen{
+  color: blue;
+  cursor: pointer;
+}
+
+th{
+  font-family: 'Kalnia',serif;
+}
+
+td{
+  font-family: 'Lato', sans-serif;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .responsiveHidden{
+    display: none;
+  }
+  th,td{
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1220px) {
+  th,td{
+    font-size: 12px;
+  }
+}

@@ -1,10 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light navBar1">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/"><img src="../../assets/images/ArtStoreLogo.png" alt="logo du site ArtStore"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
+    
     <div class="welcome" *ngIf="userData?.gender === 'female'">
       <p>Bienvenue Madame {{ userData?.firstName }}</p>
     </div>
@@ -15,30 +12,29 @@
       <p>Bienvenue {{ userData?.firstName }}</p>
     </div>
     <div class="emptyDiv">
-
+      
     </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Accueil</a>
         </li>
+        <li><hr class="dropdown-divider responsiveDevider"></li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/profile">Profil</a>
         </li>
-        <li class="nav-item" *ngIf="!loggedIn()">
-          <a class="nav-link active" aria-current="page" routerLink="/login">Se connecter</a>
-        </li>
-        <li class="nav-item" *ngIf="loggedIn()">
-          <a class="nav-link active" aria-current="page" routerLink="/" (click)="loggedout()">Se déconnecter</a>
-        </li>
+        <li><hr class="dropdown-divider responsiveDevider" *ngIf="isAdmin()"></li>
         <li class="nav-item dropdown" *ngIf="isAdmin()">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
             Administration
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" routerLink="/admin-user">Liste des utilisateurs</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="/admin-_nft">Liste des nfts</a></li>
+            <li><a class="dropdown-item" routerLink="/admin-nft">Liste des nfts</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink="/admin-sub-category">Liste des sous-catégories</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -49,9 +45,59 @@
         </li>
 
       </ul>
-      <a routerLink="/register">Inscrivez-vous</a>
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+        <li><hr class="dropdown-divider responsiveDevider" *ngIf="!loggedIn()"></li>
+        <li class="nav-item" *ngIf="!loggedIn()">
+          <a class="nav-link active" aria-current="page" routerLink="/login" >Se connecter</a>
+        </li>
+        <li><hr class="dropdown-divider responsiveDevider" *ngIf="loggedIn()"></li>
+        <li class="nav-item" *ngIf="loggedIn()">
+          <a class="nav-link active" aria-current="page" routerLink="/" (click)="loggedout()">Se déconnecter</a>
+        </li>
+        <li><hr class="dropdown-divider responsiveDevider" *ngIf="!loggedIn()"></li>
+        <li class="nav-item" *ngIf="!loggedIn()">
+          <a class="nav-link active" aria-current="page" routerLink="/register">Inscrivez-vous  <i class="fa-solid fa-user-plus"></i></a>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>
 
-
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav> -->

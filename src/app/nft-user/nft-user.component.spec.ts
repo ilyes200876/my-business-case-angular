@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MediaComponent } from './media.component';
+import { NftUserComponent } from './nft-user.component';
 
-describe('MediaComponent', () => {
-  let component: MediaComponent;
-  let fixture: ComponentFixture<MediaComponent>;
+describe('NftUserComponent', () => {
+  let component: NftUserComponent;
+  let fixture: ComponentFixture<NftUserComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MediaComponent]
+      declarations: [NftUserComponent]
     });
-    fixture = TestBed.createComponent(MediaComponent);
+    fixture = TestBed.createComponent(NftUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,8 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 import { UserService } from 'src/services/user/user.service';
 import { UserInterface } from '../interfaces/user-interface';
-// import { UserInterface } from '../interfaces/user-interface';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +12,7 @@ import { UserInterface } from '../interfaces/user-interface';
 })
 export class RegisterComponent {
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private router: Router){}
 
   public form: FormGroup = new FormGroup({
     firstName: new FormControl(''),
@@ -32,9 +31,6 @@ export class RegisterComponent {
 
   register(){
     if(this.form.valid){
-      // const bcrypt = require('bcrypt');
-      // let formattedBirthDate = this.datePipe.transform(this.form.value.birth, 'dd/MM/yyyy');
-      // let hashedPassword = bcrypt.hashSync(this.form.value.password, 10);
       let user: UserInterface = {
         id:0,
         roles: [],
@@ -43,7 +39,7 @@ export class RegisterComponent {
         email: this.form.value.email,
         nickname: this.form.value.username,
         gender: this.form.value.gender,
-        password: this.form.value.email,
+        password: this.form.value.password,
         birthDate: this.form.value.birthDate,
         profilePic: this.form.value.profilePic,
         address: 
@@ -54,14 +50,13 @@ export class RegisterComponent {
             country: this.form.value.country
           },
         nfts: [],
-        isOwner: true
       };
 
-    this.userService.createUser(user).subscribe(response => {
-      this.form.reset();
-      console.log(user);
-    });
-
+      this.userService.createUser(user).subscribe(response => {
+        this.form.reset();
+        console.log(user);
+        this.router.navigate(['/login']);
+      });
     }
   }
 

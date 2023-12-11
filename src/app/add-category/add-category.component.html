@@ -1,0 +1,33 @@
+<h2 class="text-center"> Ajoutez une catégorie</h2>
+
+<div class="text-center buttonCategory">
+  <button (click)="openModal()">Ajouter</button>
+</div>
+
+<div class="modal" id="modalUpdate">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div>
+        <button type="button" (click)="closeModal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form [formGroup]="formAdd" class="my-5" (ngSubmit)="onSubmit()">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <label for="categoryName" class="form-label">Nom de la categorie</label>
+                  <input type="text" formControlName="categoryName" id="categoryName" class="form-control">
+                </div>
+              </div> 
+              
+            </div>
+            <div class="text-center mt-4">
+              <button type="submit" (click)="closeModal()" class="btn buttonSubmit">Ajouter</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

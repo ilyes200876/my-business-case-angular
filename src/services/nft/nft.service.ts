@@ -33,9 +33,9 @@ export class NftService {
   addNft(nft : NftInterface){
     let body = JSON.stringify(nft);
     let header = { 'content-type': 'application/x-www-form-urlencoded'};
-    return this.http.post<any>(urlApi + "/sub-category/add", body, {'headers': header})
+    return this.http.post<NftInterface>(urlApi + "/nft/add", body, {'headers': header})
     .pipe(
-      catchError((error: any) => {
+      catchError((error) => {
         console.error(error);
         throw error;
       })
@@ -45,11 +45,11 @@ export class NftService {
   updateNft(id: number, data: any){
     const body = JSON.stringify(data);
     const header = { 'content-type': 'application/x-www-form-urlencoded'};
-    return this.http.put<any>(urlApi + "/update/" + id, body,  {'headers': header});
+    return this.http.put<any>(urlApi + "/nft/update/" + id, body,  {'headers': header});
   }
 
-  deleteNft(id: number): Observable<any>{
-    return this.http.delete<any>(urlApi + '/delete/' + id);
+  deleteNft(id: number){
+    return this.http.delete(urlApi + '/nft/delete/' + id);
   }
 
 }

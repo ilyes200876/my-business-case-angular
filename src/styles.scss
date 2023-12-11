@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+$mainColor: #87CA92;
+$hoverColor: #008F17;
+$backGroundColorOne: #1A61A1;
+$backGroundColorTwo: #06D2BC;
+
+html,body{
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.buttonSubmit{
+  background-color: $mainColor;
+  border: none;
+  box-shadow: 1px 1px 2px;
+}
+
+.buttonSubmit:hover{
+  background-color: $hoverColor;
+}
+
+h2,h3,h4{
+  font-family: 'Kalnia',serif;
+}
+
+p{
+  font-family: 'Lato', sans-serif;
+}
+
+@media screen and (max-width: 425px){
+  // body,html{
+  //   width: 100%;
+  // }
+  p{
+    font-size: 12px;
+  }
+
+  h2{
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  h4{
+    font-size: 17px;
+  }
+}

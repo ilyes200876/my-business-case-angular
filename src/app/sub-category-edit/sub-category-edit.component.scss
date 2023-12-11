@@ -1,0 +1,40 @@
+@import 'src/assets/variables.scss';
+
+#editSubCategory{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin:0;
+
+  .backgroundContainer{
+    background: linear-gradient($backGroundColorOne, $backGroundColorTwo);
+    border-radius: 22px;
+    width: 50%;
+
+    h2{
+      text-decoration: underline !important;
+      text-shadow: 1px 1px 2px darkgrey;
+    }
+
+    .formInputs{
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      
+      align-items: center;
+
+      .input{
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .backgroundContainer{
+    width: 90% !important;
+  }
+}

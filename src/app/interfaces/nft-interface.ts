@@ -8,9 +8,10 @@ export interface NftInterface {
   user: UserInterface,
   title: string,
   src: string,
-  weight?: number,
-  format?: string,
   description: string,
   subCategories: SubCategoryInterface[]
 
 }
+
+
+

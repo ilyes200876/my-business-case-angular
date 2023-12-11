@@ -1,3 +1,5 @@
+@import 'src/assets/variables.scss';
+
 .navBar2{
   height: 6rem;
   form{
@@ -22,15 +24,133 @@
 
 .filterContainer{
   margin-top: 3rem;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   width: 50%;
   .filter{
-    background-color: #87CA92;
+    background-color: $mainColor;
     width: 10rem;
     border-radius: 5px;
+
+    .filter:hover{
+      background-color: $hoverColor;
+    }
+    option{
+      font-family: 'Lato', sans-serif;
+    }
   }
 }
 
 .imgMedia{
   max-width: 100%;
+}
+
+.nftCol{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.cardNft{
+  width: 18rem;
+  border: solid;
+  border-radius: 20px;
+  border-width: 1px;
+  padding: 0;
+  box-shadow: 5px 5px 10px 1px grey;
+  a{
+    width: 100%;
+  }
+  .cardImg{
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+}
+
+.cardNft:hover{
+  box-shadow: 5px 5px 10px 2px darkolivegreen;
+}
+
+@media screen and (max-width: 325px) {
+  .filterContainer .filter{
+    width: 5rem;
+
+    option{
+      font-size: 12px !important;
+    }
+  }
+  .nftCol{
+    display: flex;
+    justify-content: center;
+  }
+
+  i{
+    left: 280px !important;
+    
+  }
+}
+
+@media screen and (min-width: 326px) and (max-width:425px){
+  .filterContainer .filter{
+    width: 6rem;
+
+    option{
+      font-size: 13px !important;
+    }
+  }
+  
+  .nftCol{
+    display: flex;
+    justify-content: center;
+  }
+
+  i{
+    left: 310px !important;
+    
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 515px) {
+  i{
+    left: 345px !important;
+    
+  }
+}
+
+@media screen and (min-width:516px) and (max-width:615px){
+  i{
+    left: 390px !important;
+  }
+}
+
+@media screen and (min-width:616px) and (max-width:767px){
+  i{
+    left: 440px !important;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+  i{
+    left: 510px !important;
+  }
+}
+
+@media screen and (min-width:1024px) and (max-width:1130px){
+  i{
+    left: 635px !important;
+  }
+}
+
+@media screen and (min-width:1131px) and (max-width:1439px){
+  i{
+    left: 700px !important;
+  }
+}
+
+@media screen and (min-width:1440px) and (max-width:1500px){
+  i{
+    left: 845px !important;
+  }
 }

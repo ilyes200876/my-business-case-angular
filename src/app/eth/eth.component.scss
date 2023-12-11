@@ -1,0 +1,34 @@
+.container{
+  // height: 260px !important;
+  .chartContainer{
+    // max-width: 95% !important;
+    height: 100% !important;
+    canvas{
+      height: 100% !important;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px){
+  h2{
+    font-size: 17px !important;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1440px){
+  h2{
+    font-size: 17px !important;
+  }
+  .container{
+    height: 320px !important;
+    .chartContainer{
+      // max-width: 95% !important;
+      height: 100% !important;
+      canvas{
+        height: 100% !important;
+        width: 100% !important;
+      }
+    }
+  }
+}

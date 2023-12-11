@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CategoryInterface } from '../interfaces/category-interface';
 import { CategoryService } from 'src/services/category/category.service';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './admin-category.component.html',
   styleUrls: ['./admin-category.component.scss']
 })
-export class AdminCategoryComponent {
+export class AdminCategoryComponent implements OnInit{
 
   categories: CategoryInterface[] = [];
 
@@ -22,42 +22,7 @@ export class AdminCategoryComponent {
     });
   }
 
-  public formAdd: FormGroup = new FormGroup({
-    categoryName: new FormControl(''),
-  })
-
-  openModal(){
-    const modalDiv = document.getElementById('modalUpdate');
-
-    if(modalDiv != null){
-      modalDiv.style.display = 'block';
-    }
-  }
-
-  closeModal(){
-    const modalDiv = document.getElementById('modalUpdate');
-
-    if(modalDiv != null){
-      modalDiv.style.display = 'none';
-    }
-  }
-
-  onSubmit(){
-    if(this.formAdd.valid){
-      let category: CategoryInterface = {
-        id: 0,
-        categoryName: this.formAdd.value.categoryName,
-        subCategories: []
-      };
-
-    this.categoryService.addCategory(category).subscribe(response => {
-      this.formAdd.reset();
-      console.log(category);
-      this.categories.push(category);
-    });
-
-    }
-  }
+  
 
   deleteCategory(id: number, index: number) {
     this.categoryService.deleteCategory(id).subscribe(categorytDelete => {

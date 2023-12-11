@@ -28,7 +28,7 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  getLoggedInUseremail(): any {
+  getLoggedInUseremail(): string | null {
     const token = localStorage.getItem('token');
     if(token){
       const tokenParts = token.split('.');

@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { EthService } from 'src/services/eth/eth.service';
 import { EthInterface } from 'src/app/interfaces/eth-interface';
 import { Chart } from 'chart.js/auto'
-// import { Chart } from 'angular-highcharts';
 
 @Component({
   selector: 'app-eth',
@@ -18,14 +17,10 @@ export class EthComponent implements OnInit{
   ctx: any;
   @ViewChild('mychart') mychart: any;
 
-  
-  
-
   constructor(private ethService: EthService){}
   
   ngOnInit(){
     this.getEthData();
-//     // this.lineChart;
   }
   
   getEthData(){
@@ -61,5 +56,4 @@ export class EthComponent implements OnInit{
     });
     })
   }
-  
 }

@@ -1,0 +1,109 @@
+.profileData{
+  margin-top: 50px;
+  display: flex;
+  .profilePic{
+    width: 15rem;
+    height: 15rem;
+    border: solid;
+    border-radius: 150px 150px 150px 150px;
+    margin-left: -1rem;
+    margin-right: 5rem;
+  
+    img{
+      object-fit: cover;
+      border-radius: 150px 150px 150px 150px;
+    }
+  }
+
+  .userDatas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #87CA92;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 5px 5px 10px grey;
+    
+    .usernameData{
+      margin-left: 10rem;
+      margin-top: 1rem;
+    }
+    .userFirstName{
+      margin-right: 1rem;
+      margin-left: -4rem;
+    }
+  }
+  
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px){
+  .profileData{
+    margin-top: 10px;
+    height: 10rem;
+    margin-right:0;
+    
+  }
+  .profilePic{
+    margin-right: 5px !important;
+    width: 30% !important;
+  }
+
+  .userDatas{
+    width: 50% !important;
+
+    .usernameData{
+      text-align: center;
+      margin: 0 !important;
+    }
+    .userFirstName{
+      margin-left: 0 !important;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px){
+  .profilePic{
+    height: 6rem !important;
+  }
+}
+
+
+@media screen and (min-width:375px) and (max-width: 424px){
+  .profilePic{
+    height: 7rem !important;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 425px){
+  .profilePic{
+    height: 8rem !important;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 767px){
+  .profileData{
+    margin-top: 10px;
+    height: 10rem;
+    margin-right:0;
+    
+  }
+  .profilePic{
+    margin-right: 5px !important;
+    width: 30% !important;
+    height: 9rem !important;
+  }
+
+  .userDatas{
+    width: 50% !important;
+
+    .usernameData{
+      text-align: center;
+      margin: 0 !important;
+      margin-top: 2px !important;
+    }
+    .userFirstName{
+      margin-left: 0 !important;
+    }
+  }
+}

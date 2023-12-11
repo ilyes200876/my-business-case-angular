@@ -1,4 +1,4 @@
-<nav class="navbar bg-light navBar2">
+<nav class="navbar navBar2">
   <div class="container-fluid d-flex justify-content-center">
     <form class="d-flex" role="search" [formGroup]="form">
       <input type="text" placeholder="   Search NFT by title"  formControlName="title" (ngModelChange)="search($event)">
@@ -9,35 +9,41 @@
 
 <div class="container-fluid d-flex justify-content-end filterContainer">
 
-    <select class="filter" (change)="onSubCategoryNameChanges($event)">
-      <option selected>All</option>
-      <ng-container *ngFor="let subCategory of subCategories">
-        <option [value]="subCategory.subCategoryName">
-          {{subCategory.subCategoryName}}
-        </option>
-      </ng-container>
-    </select>
-
-
+  <select class="filter" (change)="onSubCategoryNameChanges($event)">
+    <option selected>All</option>
+    <ng-container *ngFor="let subCategory of subCategories">
+      <option [value]="subCategory.subCategoryName">
+        {{subCategory.subCategoryName}}
+      </option>
+    </ng-container>
+  </select>
 </div>
-<div class="container d-flex justify-content-around me-2">
-  <div class="row">
-    <div *ngFor="let nft of nfts" class="col-3 border border-secondary border-3 m-1">
+
+  <div class="container mb-5">
+    <h2>Les nouveaux Nfts</h2>
+  </div>
+
+<div class="container">
+  <div class="row nftCol">
+    <div *ngFor="let nft of nfts" class="col-3 border mt-3 ms-1 cardNft">
       <a routerLink="/nft/details/{{ nft.id }}">
-        <img  src="{{ nft.src }}" alt="image de {{ nft.title }}" class="imgMedia m-auto d-block">
+        <img  src="{{ nft.src }}" alt="image de {{ nft.title }}" class="imgMedia m-auto d-block cardImg">
       </a>
-      <h4 class="text-center">titre: {{ nft.title }}</h4>
-      <p class="text-center">Types : <span *ngFor="let nftSubCategory of nft.subCategories" class="types">{{ nftSubCategory.subCategoryName }},</span></p> 
-      <p class="text-center">créé le : {{ nft.createdAt | date: "shortDate" }} by {{ nft.user.nickname }}</p>
+      <div class="card-body d-flex flex-column">
+        <h4 class="text-center">{{ nft.title }}</h4>
+        <p class="text-center">Types : <span *ngFor="let nftSubCategory of nft.subCategories" class="types">{{ nftSubCategory.subCategoryName }}, </span></p> 
+        <p class="text-center">{{ nft.price /100 }}<i class="fa-brands fa-ethereum"></i> ~ {{ ethPrice * nft.price / 100 }}€ </p>
+        <p class="text-center">créé le : {{ nft.createdAt | date: "shortDate" }} by {{ nft.user.nickname }}</p>
+      </div>
   
     </div>
 
   </div>
 </div>
 
-<div *ngFor="let user of users">
+<!-- <div *ngFor="let user of users">
   <ul>
     <li>{{ user.id }}</li>
     <li>{{ user. nickname }}</li>
   </ul>
-</div>
+</div> -->
