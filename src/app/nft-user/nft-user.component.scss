@@ -1,6 +1,6 @@
 
 
-.nftcol{
+.nftCol{
   display: flex;
   justify-content: space-between;
 }
@@ -20,6 +20,10 @@
     width: 100%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+  }
+
+  .fa-ethereum{
+    color: rgb(12, 12, 121);
   }
 }
 

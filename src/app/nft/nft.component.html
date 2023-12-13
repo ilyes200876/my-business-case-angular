@@ -25,7 +25,7 @@
 
 <div class="container">
   <div class="row nftCol">
-    <div *ngFor="let nft of nfts" class="col-3 border mt-3 ms-1 cardNft">
+    <div *ngFor="let nft of nfts" class="col-3 mt-3 ms-1 cardNft">
       <a routerLink="/nft/details/{{ nft.id }}">
         <img  src="{{ nft.src }}" alt="image de {{ nft.title }}" class="imgMedia m-auto d-block cardImg">
       </a>
