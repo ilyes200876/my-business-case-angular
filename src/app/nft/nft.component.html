@@ -1,8 +1,8 @@
 <nav class="navbar navBar2">
   <div class="container-fluid d-flex justify-content-center">
-    <form class="d-flex" role="search" [formGroup]="form">
+    <form class="d-flex justify-content-between" role="search" [formGroup]="form">
       <input type="text" placeholder="   Search NFT by title"  formControlName="title" (ngModelChange)="search($event)">
-      <i class="fas fa-search"></i>
+      <button><i class="fas fa-search"></i></button>
     </form>
   </div>
 </nav>
