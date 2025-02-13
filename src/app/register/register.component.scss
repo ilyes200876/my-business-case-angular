@@ -10,11 +10,15 @@
 }
 
 .formContainer{
-  background: linear-gradient(45deg, #00E1B9 0%, #2388CB 40%, #080F4B 100%);
+  background: #2191db;
   border-radius: 22px !important;
 
   h2{
     text-shadow: 4px 4px 1px darkolivegreen;
+  }
+
+  .labels{
+    color: white;
   }
 }
 

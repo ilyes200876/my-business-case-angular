@@ -2,12 +2,12 @@
   <div class="container w-50 backgroundContainer">
     <form class="formInputs py-5" (ngSubmit)="handleSubmit()" [formGroup]="form">
       <div class="input">
-        <label for="email">Email</label>
+        <label class="labels" for="email">Email</label>
         <input type="email" id="email" formControlName="username" class="form-control" />
       </div>
   
       <div class="mt-2 input">
-        <label for="password">Mot de passe</label>
+        <label class="labels" for="password">Mot de passe</label>
         <input type="password" formControlName="password" id="password" class="form-control">
       </div>
   
